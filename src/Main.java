@@ -7,15 +7,13 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
     frame.setSize(1000,1000);
-GridLayout card = new GridLayout(5,3);
     JPanel panel = new JPanel();
-    panel.setLayout(card);
-
+    panel.setLayout(null);
     JLabel label = new JLabel("Hello");
     JButton roll = new JButton("Roll");
-
     panel.add(label);
     panel.add(roll);
+    roll.setBounds(400,300,35,50);
     frame.add(panel);
     frame.setVisible(true);
 
