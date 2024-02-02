@@ -13,7 +13,7 @@ public class Main {
     JButton roll = new JButton("Roll");
     panel.add(label);
     panel.add(roll);
-    roll.setBounds(400,300,35,50);
+    roll.setBounds(0,frame.getHeight()-350,frame.getWidth(),100);
     frame.add(panel);
     frame.setVisible(true);
 
