@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
+
    static int countRolls = 0;
    static boolean saveDie1 = false;
     static boolean saveDie2 = false;
@@ -18,7 +19,12 @@ public class Main {
     frame.setSize(1000,1000);
     JPanel panel = new JPanel();
     panel.setLayout(null);
-    JLabel label = new JLabel("Hello");
+    JButton computer1 = new JButton("1 Computer");
+        JButton computer2 = new JButton("2 Computers");
+        JButton computer3 = new JButton("3 Computers");
+        JButton noComputer = new JButton("No Computers");
+
+    JLabel label = new JLabel("Welcome to Yahtzee! How many computers are you going to play against?");
     JButton roll = new JButton("Roll");
     ImageIcon die1 = new ImageIcon("Images/Images copy 2/dice1.png");
     die1.setImage(die1.getImage().getScaledInstance(75,75,Image.SCALE_DEFAULT));
@@ -44,11 +50,20 @@ JButton score = new JButton("Score this roll");
     JLabel image4 = new JLabel();
     JLabel image5 = new JLabel();
     panel.add(label);
+    panel.add(computer1);
+    panel.add(computer2);
+    panel.add(computer3);
+    panel.add(noComputer);
+    noComputer.setBounds(751,500,250,100);
+    computer3.setBounds(501,500,250,100);
+    computer2.setBounds(251,500,250,100);
+    computer1.setBounds(0,500,250,100);
         panel.add(image1);
         panel.add(image2);
         panel.add(image3);
         panel.add(image4);
         panel.add(image5);
+
     panel.add(dice1);
     panel.add(score);
     score.setBounds(0,frame.getHeight()-400, frame.getWidth(), 50);
@@ -67,8 +82,20 @@ JButton score = new JButton("Score this roll");
     panel.add(dice4);
     panel.add(dice5);
     panel.add(roll);
+    panel.add(label);
+    dice1.setVisible(false);
+        dice5.setVisible(false);
+        dice4.setVisible(false);
+        dice2.setVisible(false);
+        dice3.setVisible(false);
+
+    roll.setVisible(false);
+    score.setVisible(false);
+
+    label.setBounds(300,100,500,100);
     roll.setBounds(0,frame.getHeight()-350,frame.getWidth(),100);
     frame.add(panel);
+
     frame.setVisible(true);
     roll.addActionListener(new ActionListener() {
         @Override
@@ -79,7 +106,7 @@ JButton score = new JButton("Score this roll");
                 int dieRoll3 = (int) (Math.random() * 6) + 1;
                 int dieRoll4 = (int) (Math.random() * 6) + 1;
                 int dieRoll5 = (int) (Math.random() * 6) + 1;
-                if (dieRoll1 == 1 && Main.saveDie1 == false) {
+                if (dieRoll1 == 1 && saveDie1 == false) {
                     image1.setIcon(die1);
                 } else if (dieRoll1 == 2 & saveDie1 == false) {
                     image1.setIcon(die2);
@@ -144,7 +171,9 @@ JButton score = new JButton("Score this roll");
                 } else if (dieRoll5 == 6 && saveDie5 == false) {
                     image5.setIcon(die6);
                 }
-                countRolls++;
+                Main.countRolls++;
+            }else{
+label.setText("You ran out of Rolls. You must play this roll");
             }
         }
     });
