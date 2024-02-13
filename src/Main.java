@@ -13,6 +13,11 @@ public class Main {
     static boolean saveDie3 = false;
    static boolean saveDie4 = false;
     static boolean saveDie5 = false;
+    static int saveDie1Num;
+    static int saveDie2Num;
+    static int saveDie3Num;
+    static int saveDie4Num;
+    static int saveDie5Num;
     public static void main(String[] args) {
 
         JFrame frame = new JFrame();
@@ -108,68 +113,98 @@ JButton score = new JButton("Score this roll");
                 int dieRoll5 = (int) (Math.random() * 6) + 1;
                 if (dieRoll1 == 1 && saveDie1 == false) {
                     image1.setIcon(die1);
+                    Main.saveDie1Num = dieRoll1;
                 } else if (dieRoll1 == 2 & saveDie1 == false) {
                     image1.setIcon(die2);
+                    Main.saveDie1Num = dieRoll1;
                 } else if (dieRoll1 == 3 & saveDie1 == false) {
                     image1.setIcon(die3);
+                    Main.saveDie1Num = dieRoll1;
                 } else if (dieRoll1 == 4 & saveDie1 == false) {
                     image1.setIcon(die4);
+                    Main.saveDie1Num = dieRoll1;
                 } else if (dieRoll1 == 5 & saveDie1 == false) {
                     image1.setIcon(die5);
+                    Main.saveDie1Num = dieRoll1;
                 } else if (dieRoll1 == 6 & saveDie1 == false) {
                     image1.setIcon(die6);
+                    Main.saveDie1Num = dieRoll1;
                 }
                 if (dieRoll2 == 1 && saveDie2 == false) {
                     image2.setIcon(die1);
+                    Main.saveDie2Num = dieRoll2;
                 } else if (dieRoll2 == 2 && saveDie2 == false) {
                     image2.setIcon(die2);
+                    Main.saveDie2Num = dieRoll2;
                 } else if (dieRoll2 == 3 && saveDie2 == false) {
                     image2.setIcon(die3);
+                    Main.saveDie2Num = dieRoll2;
                 } else if (dieRoll2 == 4 && saveDie2 == false) {
                     image2.setIcon(die4);
+                    Main.saveDie2Num = dieRoll2;
                 } else if (dieRoll2 == 5 && saveDie2 == false) {
                     image2.setIcon(die5);
+                    Main.saveDie2Num = dieRoll2;
                 } else if (dieRoll2 == 6 && saveDie2 == false) {
                     image2.setIcon(die6);
+                    Main.saveDie2Num = dieRoll2;
                 }
                 if (dieRoll3 == 1 && saveDie3 == false) {
                     image3.setIcon(die1);
+                    Main.saveDie3Num = dieRoll3;
                 } else if (dieRoll3 == 2 && saveDie3 == false) {
                     image3.setIcon(die2);
+                    Main.saveDie3Num = dieRoll3;
                 } else if (dieRoll3 == 3 && saveDie3 == false) {
                     image3.setIcon(die3);
+                    Main.saveDie3Num = dieRoll3;
                 } else if (dieRoll3 == 4 && saveDie3 == false) {
                     image3.setIcon(die4);
+                    Main.saveDie3Num = dieRoll3;
                 } else if (dieRoll3 == 5 && saveDie3 == false) {
                     image3.setIcon(die5);
+                    Main.saveDie3Num = dieRoll3;
                 } else if (dieRoll3 == 6 && saveDie3 == false) {
                     image3.setIcon(die6);
+                    Main.saveDie3Num = dieRoll3;
                 }
                 if (dieRoll4 == 1 && saveDie4 == false) {
                     image4.setIcon(die1);
+                    Main.saveDie4Num = dieRoll4;
                 } else if (dieRoll4 == 2 && saveDie4 == false) {
                     image4.setIcon(die2);
+                    Main.saveDie4Num = dieRoll4;
                 } else if (dieRoll4 == 3 && saveDie4 == false) {
                     image4.setIcon(die3);
+                    Main.saveDie4Num = dieRoll4;
                 } else if (dieRoll4 == 4 && saveDie4 == false) {
                     image4.setIcon(die4);
+                    Main.saveDie4Num = dieRoll4;
                 } else if (dieRoll4 == 5 && saveDie4 == false) {
                     image4.setIcon(die5);
+                    Main.saveDie4Num = dieRoll4;
                 } else if (dieRoll4 == 6 && saveDie4 == false) {
                     image4.setIcon(die6);
+                    Main.saveDie4Num = dieRoll4;
                 }
                 if (dieRoll5 == 1 && saveDie5 == false) {
                     image5.setIcon(die1);
+                    Main.saveDie5Num = dieRoll5;
                 } else if (dieRoll5 == 2 && saveDie5 == false) {
                     image5.setIcon(die2);
+                    Main.saveDie5Num = dieRoll5;
                 } else if (dieRoll5 == 3 && saveDie5 == false) {
                     image5.setIcon(die3);
+                    Main.saveDie5Num = dieRoll5;
                 } else if (dieRoll5 == 4 && saveDie5 == false) {
                     image5.setIcon(die4);
+                    Main.saveDie5Num = dieRoll5;
                 } else if (dieRoll5 == 5 && saveDie5 == false) {
                     image5.setIcon(die5);
+                    Main.saveDie5Num = dieRoll5;
                 } else if (dieRoll5 == 6 && saveDie5 == false) {
                     image5.setIcon(die6);
+                    Main.saveDie5Num = dieRoll5;
                 }
                 Main.countRolls++;
             }else{
@@ -180,9 +215,105 @@ label.setText("You ran out of Rolls. You must play this roll");
     dice1.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
+            label.setText("You Saved the first die");
+Main.saveDie1 = true;
 
-
-
+        }
+    });
+    dice2.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            label.setText("You Saved the second die");
+            Main.saveDie2 = true;
+        }
+    });
+    dice3.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            label.setText("You saved the third die");
+            Main.saveDie3 = true;
+        }
+    });
+    dice4.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            label.setText("You saved the forth die");
+            Main.saveDie4 = true;
+        }
+    });
+    dice5.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            label.setText("You saved the fifth die");
+            Main.saveDie5 = true;
+        }
+    });
+    computer1.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            dice1.setVisible(true);
+            dice5.setVisible(true);
+            dice4.setVisible(true);
+            dice2.setVisible(true);
+            dice3.setVisible(true);
+            roll.setVisible(true);
+            score.setVisible(true);
+            computer1.setVisible(false);
+            computer2.setVisible(false);
+            computer3.setVisible(false);
+            noComputer.setVisible(false);
+            label.setText("Your turn to roll");
+        }
+    });
+    computer2.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            dice1.setVisible(true);
+            dice5.setVisible(true);
+            dice4.setVisible(true);
+            dice2.setVisible(true);
+            dice3.setVisible(true);
+            roll.setVisible(true);
+            score.setVisible(true);
+            computer1.setVisible(false);
+            computer2.setVisible(false);
+            computer3.setVisible(false);
+            noComputer.setVisible(false);
+            label.setText("Your turn to roll");
+        }
+    });
+    computer3.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            dice1.setVisible(true);
+            dice5.setVisible(true);
+            dice4.setVisible(true);
+            dice2.setVisible(true);
+            dice3.setVisible(true);
+            roll.setVisible(true);
+            score.setVisible(true);
+            computer1.setVisible(false);
+            computer2.setVisible(false);
+            computer3.setVisible(false);
+            noComputer.setVisible(false);
+            label.setText("Your turn to roll");
+        }
+    });
+    noComputer.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            dice1.setVisible(true);
+            dice5.setVisible(true);
+            dice4.setVisible(true);
+            dice2.setVisible(true);
+            dice3.setVisible(true);
+            roll.setVisible(true);
+            score.setVisible(true);
+            computer1.setVisible(false);
+            computer2.setVisible(false);
+            computer3.setVisible(false);
+            noComputer.setVisible(false);
+            label.setText("Your turn to roll");
         }
     });
     //hahahah
