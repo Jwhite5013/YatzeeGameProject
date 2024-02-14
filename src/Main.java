@@ -6,6 +6,12 @@ import java.awt.event.ActionListener;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
+static int onesScore = 0;
+    static int twosScore = 0;
+    static int threesScore = 0;
+    static int foursScore = 0;
+    static int fivesScore = 0;
+    static int sixesScore = 0;
 
    static int countRolls = 0;
    static boolean saveDie1 = false;
@@ -18,6 +24,12 @@ public class Main {
     static int saveDie3Num;
     static int saveDie4Num;
     static int saveDie5Num;
+    static boolean onesPlayed = false;
+    static boolean twosPlayed = false;
+    static boolean threesPlayed = false;
+    static boolean foursPlayed = false;
+    static boolean fivesPlayed = false;
+    static boolean sixesPlayed = false;
     public static void main(String[] args) {
 
         JFrame frame = new JFrame();
@@ -31,6 +43,7 @@ public class Main {
 
     JLabel label = new JLabel("Welcome to Yahtzee! How many computers are you going to play against?");
     JButton roll = new JButton("Roll");
+    //Images set
     ImageIcon die1 = new ImageIcon("Images/Images copy 2/dice1.png");
     die1.setImage(die1.getImage().getScaledInstance(75,75,Image.SCALE_DEFAULT));
     ImageIcon die2 = new ImageIcon("Images/Images copy 2/Dice2.png");
@@ -44,16 +57,25 @@ public class Main {
     ImageIcon die6 = new ImageIcon("Images/Images copy 2/images.png");
         die6.setImage(die6.getImage().getScaledInstance(75,75,Image.SCALE_DEFAULT));
 JButton score = new JButton("Score this roll");
+//button for all the dice
     JButton dice1 = new JButton("");
     JButton dice2 = new JButton("");
     JButton dice3 = new JButton("");
     JButton dice4 = new JButton("");
     JButton dice5 = new JButton("");
+    //images labels for all the dice
     JLabel image1 = new JLabel();
     JLabel image2 = new JLabel();
     JLabel image3 = new JLabel();
     JLabel image4 = new JLabel();
     JLabel image5 = new JLabel();
+    JButton ones = new JButton("Ones");
+    JButton twos = new JButton("Twos");
+    JButton threes = new JButton("Threes");
+    JButton fours = new JButton("Fours");
+    JButton fives = new JButton("Fives");
+    JButton sixes = new JButton("Sixes");
+
     panel.add(label);
     panel.add(computer1);
     panel.add(computer2);
@@ -88,6 +110,25 @@ JButton score = new JButton("Score this roll");
     panel.add(dice5);
     panel.add(roll);
     panel.add(label);
+    panel.add(ones);
+    ones.setBounds(0,500,175,100);
+    ones.setVisible(false);
+    panel.add(twos);
+    twos.setBounds(176,500,175,100);
+    twos.setVisible(false);
+    panel.add(threes);
+    threes.setBounds(351,500,175,100);
+    threes.setVisible(false);
+        panel.add(fours);
+        fours.setBounds(526,500,175,100);
+        fours.setVisible(false);
+        panel.add(fives);
+        fives.setBounds(700,500,175,100);
+        fives.setVisible(false);
+        panel.add(sixes);
+        sixes.setBounds(876,500,125,100);
+        sixes.setVisible(false);
+
     dice1.setVisible(false);
         dice5.setVisible(false);
         dice4.setVisible(false);
@@ -314,6 +355,62 @@ Main.saveDie1 = true;
             computer3.setVisible(false);
             noComputer.setVisible(false);
             label.setText("Your turn to roll");
+        }
+    });
+    score.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            label.setText("What would you like to play");
+            roll.setVisible(false);
+            score.setVisible(false);
+            if (onesPlayed == false) {
+                ones.setVisible(true);
+            }
+            if(twosPlayed == false) {
+                twos.setVisible(true);
+            }
+            if(threesPlayed == false){
+                threes.setVisible(true);
+            }
+            if(foursPlayed == false){
+                fours.setVisible(true);
+            }
+            if(fivesPlayed == false){
+                fives.setVisible(true);
+            }
+            if(sixesPlayed==false){
+                sixes.setVisible(true);
+            }
+        }
+    });
+    ones.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Main.onesPlayed = true;
+            Main.countRolls = 0;
+            if(saveDie1Num==1){
+                Main.onesScore += Main.saveDie1Num;
+            }
+            if(saveDie2Num==1){
+                Main.onesScore += Main.saveDie2Num;
+            }
+            if(saveDie3Num==1){
+                Main.onesScore += Main.saveDie3Num;
+            }
+            if(saveDie4Num==1){
+                Main.onesScore += Main.saveDie4Num;
+            }
+            if(saveDie5Num==1){
+                Main.onesScore += Main.saveDie5Num;
+            }
+            roll.setVisible(true);
+            score.setVisible(true);
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
         }
     });
     //hahahah
