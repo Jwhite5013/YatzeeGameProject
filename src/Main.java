@@ -6,13 +6,14 @@ import java.awt.event.ActionListener;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
+    static int finalScore = 0;
     static int onesScore = 0;
     static int twosScore = 0;
     static int threesScore = 0;
     static int foursScore = 0;
     static int fivesScore = 0;
     static int sixesScore = 0;
-
+ static int threeOfAKindScore = 0;
     static int countRolls = 0;
     static boolean saveDie1 = false;
     static boolean saveDie2 = false;
@@ -30,6 +31,7 @@ public class Main {
     static boolean foursPlayed = false;
     static boolean fivesPlayed = false;
     static boolean sixesPlayed = false;
+    static boolean threeOfAKindPlayed = false;
     public static void main(String[] args) {
 
         JFrame frame = new JFrame();
@@ -72,6 +74,8 @@ public class Main {
         JButton fours = new JButton("Fours");
         JButton fives = new JButton("Fives");
         JButton sixes = new JButton("Sixes");
+        JButton threeOfAKind = new JButton("Three of a Kind");
+
 
         panel.add(label);
         panel.add(computer1);
@@ -116,6 +120,9 @@ public class Main {
         panel.add(sixes);
         sixes.setBounds(876,500,125,100);
         sixes.setVisible(false);
+        panel.add(threeOfAKind);
+        threeOfAKind.setBounds(0,650,175,100);
+        threeOfAKind.setVisible(false);
 
         dice1.setVisible(false);
         dice5.setVisible(false);
@@ -134,7 +141,7 @@ public class Main {
         roll.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(countRolls <=2) {
+                if (countRolls <= 2) {
                     int dieRoll1 = (int) (Math.random() * 6) + 1;
                     int dieRoll2 = (int) (Math.random() * 6) + 1;
                     int dieRoll3 = (int) (Math.random() * 6) + 1;
@@ -236,7 +243,7 @@ public class Main {
                         Main.saveDie5Num = dieRoll5;
                     }
                     Main.countRolls++;
-                }else{
+                } else {
                     label.setText("You ran out of Rolls. You must play this roll");
                 }
             }
@@ -394,6 +401,9 @@ public class Main {
                 if(sixesPlayed==false){
                     sixes.setVisible(true);
                 }
+                if(threeOfAKindPlayed==false){
+                    threeOfAKind.setVisible(true);
+                }
             }
         });
         ones.addActionListener(new ActionListener() {
@@ -417,6 +427,8 @@ public class Main {
                     Main.onesScore += Main.saveDie5Num;
                 }
 
+                Main.finalScore = onesScore;
+                Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
                 dice2.setIcon(blank);
@@ -427,25 +439,27 @@ public class Main {
                 Main.saveDie4 = false;
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
-                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed){
-                    int finalScore = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if(finalScore>=63){
-                        finalScore+=35;
+                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
+                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
+                    if (topBonusCheck >= 63) {
+                        Main.finalScore += 35;
                     }
-                    label.setText("GAME OVER!\nYour Final score is: " + finalScore +" points!");
+                }
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed) {
+                    label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
-                }else{
-                    Main.countRolls = 0;
+                } else {
                     roll.setVisible(true);
                     score.setVisible(true);
                     ones.setVisible(false);
@@ -454,6 +468,7 @@ public class Main {
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                 }
             }
         });
@@ -477,6 +492,8 @@ public class Main {
                 if(saveDie5Num==2){
                     Main.twosScore += Main.saveDie5Num;
                 }
+                Main.finalScore = twosScore;
+                Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
                 dice2.setIcon(blank);
@@ -487,25 +504,27 @@ public class Main {
                 Main.saveDie4 = false;
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
-                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed){
-                    int finalScore = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if(finalScore>=63){
-                        finalScore+=35;
+                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
+                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
+                    if (topBonusCheck >= 63) {
+                        Main.finalScore += 35;
                     }
-                    label.setText("GAME OVER!\nYour Final score is: " + finalScore +" points!");
+                }
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed) {
+                    label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
-                }else {
-                    Main.countRolls = 0;
+                } else {
                     roll.setVisible(true);
                     score.setVisible(true);
                     ones.setVisible(false);
@@ -514,6 +533,7 @@ public class Main {
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                 }
             }
         });
@@ -523,21 +543,23 @@ public class Main {
                 Main.threesPlayed = true;
                 Main.countRolls = 0;
 
-                if(saveDie1Num==3){
+                if (saveDie1Num == 3) {
                     Main.threesScore += Main.saveDie1Num;
                 }
-                if(saveDie2Num==3){
+                if (saveDie2Num == 3) {
                     Main.threesScore += Main.saveDie2Num;
                 }
-                if(saveDie3Num==3){
+                if (saveDie3Num == 3) {
                     Main.threesScore += Main.saveDie3Num;
                 }
-                if(saveDie4Num==3){
+                if (saveDie4Num == 3) {
                     Main.threesScore += Main.saveDie4Num;
                 }
-                if(saveDie5Num==3){
+                if (saveDie5Num == 3) {
                     Main.threesScore += Main.saveDie5Num;
                 }
+                Main.finalScore = threesScore;
+                Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
                 dice2.setIcon(blank);
@@ -548,24 +570,27 @@ public class Main {
                 Main.saveDie4 = false;
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
-                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed){
-                    int finalScore = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if(finalScore>=63){
-                        finalScore+=35;
+                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
+                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
+                    if (topBonusCheck >= 63) {
+                        Main.finalScore += 35;
                     }
-                    label.setText("GAME OVER!\nYour Final score is: " + finalScore +" points!");
+                }
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed) {
+                    label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
-                }else{
+                } else {
                     roll.setVisible(true);
                     score.setVisible(true);
                     ones.setVisible(false);
@@ -574,6 +599,7 @@ public class Main {
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                 }
             }
         });
@@ -597,6 +623,8 @@ public class Main {
                 if(saveDie5Num==4){
                     Main.foursScore += Main.saveDie5Num;
                 }
+                Main.finalScore = foursScore;
+                Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
                 dice2.setIcon(blank);
@@ -607,25 +635,27 @@ public class Main {
                 Main.saveDie4 = false;
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
-                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed){
-                    int finalScore = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if(finalScore>=63){
-                        finalScore+=35;
+                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
+                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
+                    if (topBonusCheck >= 63) {
+                        Main.finalScore += 35;
                     }
-                    label.setText("GAME OVER!\nYour Final score is: " + finalScore +" points!");
+                }
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed) {
+                    label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
-                }else{
-                    Main.countRolls = 0;
+                } else {
                     roll.setVisible(true);
                     score.setVisible(true);
                     ones.setVisible(false);
@@ -634,6 +664,7 @@ public class Main {
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                 }
             }
         });
@@ -657,6 +688,8 @@ public class Main {
                 if(saveDie5Num==5){
                     Main.fivesScore += Main.saveDie5Num;
                 }
+                Main.finalScore = fivesScore;
+                Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
                 dice2.setIcon(blank);
@@ -667,25 +700,27 @@ public class Main {
                 Main.saveDie4 = false;
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
-                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed){
-                    int finalScore = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if(finalScore>=63){
-                        finalScore+=35;
+                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
+                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
+                    if (topBonusCheck >= 63) {
+                        Main.finalScore += 35;
                     }
-                    label.setText("GAME OVER!\nYour Final score is: " + finalScore +" points!");
+                }
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed) {
+                    label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
-                }else{
-                    Main.countRolls = 0;
+                } else {
                     roll.setVisible(true);
                     score.setVisible(true);
                     ones.setVisible(false);
@@ -694,6 +729,7 @@ public class Main {
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                 }
             }
         });
@@ -717,6 +753,8 @@ public class Main {
                 if(saveDie5Num==6){
                     Main.twosScore += Main.saveDie5Num;
                 }
+                Main.finalScore = sixesScore;
+                Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
                 dice2.setIcon(blank);
@@ -727,25 +765,27 @@ public class Main {
                 Main.saveDie4 = false;
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
-                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed){
-                    int finalScore = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if(finalScore>=63){
-                        finalScore+=35;
+                if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
+                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
+                    if (topBonusCheck >= 63) {
+                        Main.finalScore += 35;
                     }
-                    label.setText("GAME OVER!      Your Final score is: " + finalScore +" points!");
+                }
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed) {
+                    label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
-                }else{
-                    Main.countRolls = 0;
+                } else {
                     roll.setVisible(true);
                     score.setVisible(true);
                     ones.setVisible(false);
@@ -754,9 +794,151 @@ public class Main {
                     fours.setVisible(false);
                     fives.setVisible(false);
                     sixes.setVisible(false);
+                    threeOfAKind.setVisible(false);
                 }
             }
         });
-        //hahahah
+threeOfAKind.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Main.threeOfAKindPlayed = true;
+        int onesCount = 0;
+        int twosCount = 0;
+        int threesCount = 0;
+        int foursCount = 0;
+        int fivesCount = 0;
+        int sixesCount =0;
+        if(saveDie1Num==1){
+            onesCount++;
+        }
+        if(saveDie2Num==1){
+            onesCount++;
+        }
+        if(saveDie3Num==1){
+            onesCount++;
+        }
+        if(saveDie4Num==1){
+            onesCount++;
+        }
+        if(saveDie5Num==1){
+            onesCount++;
+        }
+        if(saveDie1Num==2){
+            twosCount++;
+        }
+        if(saveDie2Num==2){
+            twosCount++;
+        }
+        if(saveDie3Num==2){
+            twosCount++;
+        }
+        if(saveDie4Num==2){
+            twosCount++;
+        }
+        if(saveDie5Num==2){
+            twosCount++;
+        }
+        if(saveDie1Num==3){
+            threesCount++;
+        }
+        if(saveDie2Num==3){
+            threesCount++;
+        }
+        if(saveDie3Num==3){
+            threesCount++;
+        }
+        if(saveDie4Num==3){
+            threesCount++;
+        }
+        if(saveDie5Num==3){
+            threesCount++;
+        }
+        if(saveDie1Num==4){
+            foursCount++;
+        }
+        if(saveDie2Num==4){
+            foursCount++;
+        }
+        if(saveDie3Num==4){
+            foursCount++;
+        }
+        if(saveDie4Num==4){
+            foursCount++;
+        }
+        if(saveDie5Num==4){
+            foursCount++;
+        }
+        if(saveDie1Num==5){
+            fivesCount++;
+        }
+        if(saveDie2Num==5){
+            fivesCount++;
+        }
+        if(saveDie3Num==5){
+            fivesCount++;
+        }
+        if(saveDie4Num==5){
+            fivesCount++;
+        }
+        if(saveDie5Num==5){
+            fivesCount++;
+        }
+        if(saveDie1Num==6){
+            sixesCount++;
+        }
+        if(saveDie2Num==6){
+            sixesCount++;
+        }
+        if(saveDie3Num==6){
+            sixesCount++;
+        }
+        if(saveDie4Num==6){
+            sixesCount++;
+        }
+        if(saveDie5Num==6){
+            sixesCount++;
+        }
+        if(onesCount>=3||twosCount>=3||threesCount>=3||foursCount>=3||fivesCount>=3||sixesCount>=3){
+            threeOfAKindScore = saveDie1Num+saveDie2Num+saveDie3Num+saveDie4Num+saveDie5Num;
+        }
+        Main.finalScore += threeOfAKindScore;
+        Main.countRolls = 0;
+        dice1.setIcon(blank);
+        Main.saveDie1 = false;
+        dice2.setIcon(blank);
+        Main.saveDie2= false;
+        dice3.setIcon(blank);
+        Main.saveDie3 = false;
+        dice4.setIcon(blank);
+        Main.saveDie4 = false;
+        dice5.setIcon(blank);
+        Main.saveDie5= false;
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed) {
+            label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
+            threeOfAKind.setVisible(false);
+            dice1.setVisible(false);
+            dice2.setVisible(false);
+            dice3.setVisible(false);
+            dice4.setVisible(false);
+            dice5.setVisible(false);
+        } else {
+            roll.setVisible(true);
+            score.setVisible(true);
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
+            threeOfAKind.setVisible(false);
+        }
+    }
+});
     }
 }
