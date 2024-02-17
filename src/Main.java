@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
+    static boolean scoreCardPress = false;
+    static boolean scoreRollPress = false;
     static int finalScore = 0;
     static int onesScore = 0;
     static int twosScore = 0;
@@ -13,8 +15,16 @@ public class Main {
     static int foursScore = 0;
     static int fivesScore = 0;
     static int sixesScore = 0;
+    static int topScore = 0;
  static int threeOfAKindScore = 0;
  static int fourOfAKindScore = 0;
+ static int fullHouseScore = 0;
+ static int smallStraightScore = 0;
+ static int largeStraightScore = 0;
+ static int yahtzeeScore = 0;
+ static int yahtzeeBonusScore = 0;
+ static int chanceScore = 0;
+ static int bottomScore = 0;
     static int countRolls = 0;
     static boolean saveDie1 = false;
     static boolean saveDie2 = false;
@@ -34,6 +44,12 @@ public class Main {
     static boolean sixesPlayed = false;
     static boolean threeOfAKindPlayed = false;
     static boolean fourOfAKindPlayed = false;
+    static boolean fullHousePlayed = false;
+    static boolean smallStraightPlayed = false;
+    static boolean largeStraightPlayed = false;
+    static boolean yahtzeePlayed = false;
+    static int yahtzeeCount = 0;
+    static boolean chancePlayed = false;
     public static void main(String[] args) {
 
         JFrame frame = new JFrame();
@@ -80,9 +96,123 @@ public class Main {
         JButton sixes = new JButton("Sixes");
         JButton threeOfAKind = new JButton("Three of a Kind");
         JButton fourOfAKind = new JButton("Four of a Kind");
-
+        JButton fullHouse = new JButton("Full House");
+        JButton largeStraight = new JButton("Large Straight");
+        JButton smallStraight = new JButton("Small Straight");
+        JButton yahtzee = new JButton("Yahtzee!");
+        JButton chance = new JButton("Chance");
+//Score Card Labels
+        JLabel scoreCardOnes = new JLabel("");
+        JLabel scoreCardTwos = new JLabel("");
+        JLabel scoreCardThrees = new JLabel("");
+        JLabel scoreCardFours = new JLabel("");
+        JLabel scoreCardFives = new JLabel("");
+        JLabel scoreCardSixes = new JLabel("");
+        JLabel scoreCardTopScore = new JLabel("");
+        JLabel scoreCardBonus = new JLabel("");
+        JLabel scoreCardTOK = new JLabel("");
+        JLabel scoreCardFOK = new JLabel("");
+        JLabel scoreCardFH = new JLabel("");
+        JLabel scoreCardSS = new JLabel("");
+        JLabel scoreCardLS = new JLabel("");
+        JLabel scoreCardYAH = new JLabel("");
+        JLabel scoreCardChance = new JLabel("");
+        JLabel scorecardYAHB = new JLabel("");
+        JLabel scoreCardBottom = new JLabel("");
+        JLabel scoreCardFinal = new JLabel("");
 
         panel.add(label);
+        //score Label 1
+        panel.add(scoreCardOnes);
+        scoreCardOnes.setFont(new Font("Serif",Font.PLAIN,30));
+        scoreCardOnes.setBounds(300,50,200,50);
+        scoreCardOnes.setVisible(false);
+        //score label 2
+        panel.add(scoreCardTwos);
+        scoreCardTwos.setFont(new Font("Serif", Font.PLAIN, 30));
+        scoreCardTwos.setBounds(300,100,200,50);
+        scoreCardTwos.setVisible(false);
+        //score label 3
+        panel.add(scoreCardThrees);
+        scoreCardThrees.setFont(new Font("Serif", Font.PLAIN, 30));
+        scoreCardThrees.setBounds(300,150,200,50);
+        scoreCardThrees.setVisible(false);
+        //score label 4
+        panel.add(scoreCardFours);
+        scoreCardFours.setFont(new Font("Serif", Font.PLAIN, 30));
+        scoreCardFours.setBounds(300,200,200,50);
+        scoreCardFours.setVisible(false);
+        //score label 5
+        panel.add(scoreCardFives);
+        scoreCardFives.setFont(new Font("Serif", Font.PLAIN, 30));
+        scoreCardFives.setBounds(300,250,200,50);
+        scoreCardFives.setVisible(false);
+        //score label 6
+        panel.add(scoreCardSixes);
+        scoreCardSixes.setFont(new Font("Serif", Font.PLAIN, 30));
+        scoreCardSixes.setBounds(300,300,200,50);
+        scoreCardSixes.setVisible(false);
+        //score label bonus
+        panel.add(scoreCardBonus);
+        scoreCardBonus.setFont(new Font("Serif", Font.PLAIN, 30));
+        scoreCardBonus.setBounds(300,350,400,50);
+        scoreCardBonus.setVisible(false);
+        //score label top score
+        panel.add(scoreCardTopScore);
+        scoreCardTopScore.setFont(new Font("Serif",Font.PLAIN,30));
+        scoreCardTopScore.setBounds(300,400,400,50);
+        scoreCardTopScore.setVisible(false);
+        //score label Three of a kind
+        panel.add(scoreCardTOK);
+        scoreCardTOK.setFont(new Font("Serif",Font.PLAIN,30));
+        scoreCardTOK.setBounds(300,450,400,50);
+        scoreCardTOK.setVisible(false);
+        //score label Four of a kind
+        panel.add(scoreCardFOK);
+        scoreCardFOK.setFont(new Font("Serif",Font.PLAIN,30));
+        scoreCardFOK.setBounds(300,500,400,50);
+        scoreCardFOK.setVisible(false);
+        //score label Full house
+        panel.add(scoreCardFH);
+        scoreCardFH.setFont(new Font("Serif",Font.PLAIN,30));
+        scoreCardFH.setBounds(300,550,400,50);
+        scoreCardFH.setVisible(false);
+        //score label Small straight
+        panel.add(scoreCardSS);
+        scoreCardSS.setFont(new Font("Serif",Font.PLAIN,30));
+        scoreCardSS.setBounds(300,600,400,50);
+        scoreCardSS.setVisible(false);
+        //score label Large Straight
+        panel.add(scoreCardLS);
+        scoreCardLS.setFont(new Font("Serif",Font.PLAIN,30));
+        scoreCardLS.setBounds(300,650,400,50);
+        scoreCardLS.setVisible(false);
+        //score label Yahtzee
+        panel.add(scoreCardYAH);
+        scoreCardYAH.setFont(new Font("Serif",Font.PLAIN,30));
+        scoreCardYAH.setBounds(300,700,400,50);
+        scoreCardYAH.setVisible(false);
+        //score label chance
+        panel.add(scoreCardChance);
+        scoreCardChance.setFont(new Font("Serif",Font.PLAIN,30));
+        scoreCardChance.setBounds(300,750,400,50);
+        scoreCardChance.setVisible(false);
+        //score Label yahtzee bonus
+        panel.add(scorecardYAHB);
+        scorecardYAHB.setFont(new Font("Serif",Font.PLAIN,30));
+        scorecardYAHB.setBounds(300,800,400,50);
+        scorecardYAHB.setVisible(false);
+        //score label bottom
+        panel.add(scoreCardBottom);
+        scoreCardBottom.setFont(new Font("Serif",Font.PLAIN,30));
+        scoreCardBottom.setBounds(300,850,400,50);
+        scoreCardBottom.setVisible(false);
+        //score label Final
+        panel.add(scoreCardFinal);
+        scoreCardFinal.setFont(new Font("Serif",Font.PLAIN,30));
+        scoreCardFinal.setBounds(300,900,400,50);
+        scoreCardFinal.setVisible(false);
+        //computer start
         panel.add(computer1);
         panel.add(computer2);
         panel.add(computer3);
@@ -112,6 +242,7 @@ back.setVisible(false);
         panel.add(dice5);
         panel.add(roll);
         panel.add(label);
+        //scoring buttons to panel
         panel.add(ones);
         ones.setBounds(0,500,175,100);
         ones.setVisible(false);
@@ -136,6 +267,21 @@ back.setVisible(false);
         panel.add(fourOfAKind);
         fourOfAKind.setBounds(176,650,175,100);
         fourOfAKind.setVisible(false);
+        panel.add(fullHouse);
+        fullHouse.setBounds(351,650,175,100);
+        fullHouse.setVisible(false);
+        panel.add(smallStraight);
+        smallStraight.setBounds(526,650,175,100);
+        smallStraight.setVisible(false);
+        panel.add(largeStraight);
+        largeStraight.setBounds(700,650,175,100);
+        largeStraight.setVisible(false);
+        panel.add(chance);
+        chance.setBounds(876,650,125,100);
+        chance.setVisible(false);
+        panel.add(yahtzee);
+        yahtzee.setBounds(0, 800,frame.getWidth(),100);
+        yahtzee.setVisible(false);
 
         dice1.setVisible(false);
         dice5.setVisible(false);
@@ -145,6 +291,7 @@ back.setVisible(false);
 
         roll.setVisible(false);
         score.setVisible(false);
+        frame.setResizable(false);
 
         label.setBounds(300,100,500,100);
         roll.setBounds(0,frame.getHeight()-350,frame.getWidth(),100);
@@ -401,9 +548,11 @@ back.setVisible(false);
         score.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Main.scoreRollPress = true;
                 label.setText("What would you like to play");
                 roll.setVisible(false);
                 score.setVisible(false);
+                scoreCard.setVisible(false);
                 if (onesPlayed == false) {
                     ones.setVisible(true);
                 }
@@ -428,13 +577,30 @@ back.setVisible(false);
                 if(fourOfAKindPlayed==false){
                     fourOfAKind.setVisible(true);
                 }
+                if(fullHousePlayed==false){
+                    fullHouse.setVisible(true);
+                }
+                if(smallStraightPlayed==false){
+                    smallStraight.setVisible(true);
+                }
+                if(largeStraightPlayed==false){
+                    largeStraight.setVisible(true);
+                }
+                if(chancePlayed==false){
+                    chance.setVisible(true);
+                }
+                if(yahtzeePlayed==false){
+                    yahtzee.setVisible(true);
+                }if(yahtzeePlayed==false&&yahtzeeCount>0){
+                    yahtzee.setText("Yahtzee Bonus!");
+                    yahtzee.setVisible(true);
+                }
             }
         });
         ones.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Main.onesPlayed = true;
-                Main.countRolls = 0;
                 if(saveDie1Num==1){
                     Main.onesScore += Main.saveDie1Num;
                 }
@@ -452,6 +618,7 @@ back.setVisible(false);
                 }
 
                 Main.finalScore += onesScore;
+                Main.topScore+=onesScore;
                 Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
@@ -464,8 +631,7 @@ back.setVisible(false);
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
-                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if (topBonusCheck >= 63) {
+                    if (topScore >= 63) {
                         Main.finalScore += 35;
                     }
                 }
@@ -479,11 +645,18 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
+                    back.setVisible(false);
+                    scoreCard.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -495,7 +668,15 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
+                    scoreCard.setVisible(true);
+                   Main.scoreRollPress = false;
                 }
+
             }
         });
         twos.addActionListener(new ActionListener() {
@@ -519,6 +700,7 @@ back.setVisible(false);
                     Main.twosScore += Main.saveDie5Num;
                 }
                 Main.finalScore += twosScore;
+                Main.topScore+=twosScore;
                 Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
@@ -531,8 +713,7 @@ back.setVisible(false);
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
-                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if (topBonusCheck >= 63) {
+                    if (topScore >= 63) {
                         Main.finalScore += 35;
                     }
                 }
@@ -546,11 +727,18 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
+                    back.setVisible(false);
+                    scoreCard.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -562,6 +750,13 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
+                    scoreCard.setVisible(true);
+                    Main.scoreRollPress = false;
                 }
             }
         });
@@ -586,6 +781,7 @@ back.setVisible(false);
                     Main.threesScore += Main.saveDie5Num;
                 }
                 Main.finalScore += threesScore;
+                Main.topScore+=threesScore;
                 Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
@@ -598,8 +794,7 @@ back.setVisible(false);
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
-                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if (topBonusCheck >= 63) {
+                    if (topScore >= 63) {
                         Main.finalScore += 35;
                     }
                 }
@@ -613,11 +808,18 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
+                    back.setVisible(false);
+                    scoreCard.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -629,6 +831,13 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
+                    scoreCard.setVisible(true);
+                    Main.scoreRollPress = false;
                 }
             }
         });
@@ -653,6 +862,7 @@ back.setVisible(false);
                     Main.foursScore += Main.saveDie5Num;
                 }
                 Main.finalScore += foursScore;
+                Main.topScore+=foursScore;
                 Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
@@ -665,8 +875,7 @@ back.setVisible(false);
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
-                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if (topBonusCheck >= 63) {
+                    if (topScore >= 63) {
                         Main.finalScore += 35;
                     }
                 }
@@ -680,11 +889,18 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
+                    back.setVisible(false);
+                    scoreCard.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -696,6 +912,13 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
+                    scoreCard.setVisible(true);
+                    Main.scoreRollPress = false;
                 }
             }
         });
@@ -720,6 +943,7 @@ back.setVisible(false);
                     Main.fivesScore += Main.saveDie5Num;
                 }
                 Main.finalScore += fivesScore;
+                Main.topScore+=fivesScore;
                 Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
@@ -732,8 +956,7 @@ back.setVisible(false);
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
-                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if (topBonusCheck >= 63) {
+                    if (topScore >= 63) {
                         Main.finalScore += 35;
                     }
                 }
@@ -747,11 +970,18 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
+                    back.setVisible(false);
+                    scoreCard.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -763,6 +993,13 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
+                    scoreCard.setVisible(true);
+                    Main.scoreRollPress = false;
 
                 }
             }
@@ -785,9 +1022,10 @@ back.setVisible(false);
                     Main.sixesScore+=Main.saveDie4Num;
                 }
                 if(saveDie5Num==6){
-                    Main.twosScore += Main.saveDie5Num;
+                    Main.sixesScore += Main.saveDie5Num;
                 }
                 Main.finalScore += sixesScore;
+                Main.topScore+=sixesScore;
                 Main.countRolls = 0;
                 dice1.setIcon(blank);
                 Main.saveDie1 = false;
@@ -800,8 +1038,7 @@ back.setVisible(false);
                 dice5.setIcon(blank);
                 Main.saveDie5= false;
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
-                    int topBonusCheck = onesScore+twosScore+threesScore+foursScore+fivesScore+sixesScore;
-                    if (topBonusCheck >= 63) {
+                    if (topScore >= 63) {
                         Main.finalScore += 35;
                     }
                 }
@@ -815,11 +1052,18 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
                     dice1.setVisible(false);
                     dice2.setVisible(false);
                     dice3.setVisible(false);
                     dice4.setVisible(false);
                     dice5.setVisible(false);
+                    back.setVisible(false);
+                    scoreCard.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -831,6 +1075,13 @@ back.setVisible(false);
                     sixes.setVisible(false);
                     threeOfAKind.setVisible(false);
                     fourOfAKind.setVisible(false);
+                    fullHouse.setVisible(false);
+                    smallStraight.setVisible(false);
+                    largeStraight.setVisible(false);
+                    chance.setVisible(false);
+                    yahtzee.setVisible(false);
+                    scoreCard.setVisible(true);
+                    Main.scoreRollPress = false;
                 }
             }
         });
@@ -959,11 +1210,18 @@ threeOfAKind.addActionListener(new ActionListener() {
             sixes.setVisible(false);
             threeOfAKind.setVisible(false);
             fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
             dice1.setVisible(false);
             dice2.setVisible(false);
             dice3.setVisible(false);
             dice4.setVisible(false);
             dice5.setVisible(false);
+            back.setVisible(false);
+            scoreCard.setVisible(true);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -975,6 +1233,13 @@ threeOfAKind.addActionListener(new ActionListener() {
             sixes.setVisible(false);
             threeOfAKind.setVisible(false);
             fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
+            scoreCard.setVisible(true);
+            Main.scoreRollPress = false;
         }
     }
 });
@@ -1103,12 +1368,100 @@ fourOfAKind.addActionListener(new ActionListener() {
             sixes.setVisible(false);
             threeOfAKind.setVisible(false);
             fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
             dice1.setVisible(false);
             dice2.setVisible(false);
             dice3.setVisible(false);
             dice4.setVisible(false);
             dice5.setVisible(false);
+            back.setVisible(false);
+            scoreCard.setVisible(true);
         } else {
+            roll.setVisible(true);
+            score.setVisible(true);
+            scoreCard.setVisible(true);
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
+            threeOfAKind.setVisible(false);
+            fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
+
+            Main.scoreRollPress = false;
+        }
+    }
+});
+scoreCard.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        dice1.setVisible(false);
+        dice2.setVisible(false);
+        dice3.setVisible(false);
+        dice4.setVisible(false);
+        dice5.setVisible(false);
+        roll.setVisible(false);
+        score.setVisible(false);
+        label.setVisible(false);
+        Main.scoreCardPress = true;
+        scoreCard.setVisible(false);
+scoreCardOnes.setVisible(true);
+        scoreCardTwos.setVisible(true);
+        scoreCardThrees.setVisible(true);
+        scoreCardFours.setVisible(true);
+        scoreCardFives.setVisible(true);
+        scoreCardSixes.setVisible(true);
+        scoreCardBonus.setVisible(true);
+        scoreCardTopScore.setVisible(true);
+        scoreCardTOK.setVisible(true);
+        scoreCardFOK.setVisible(true);
+        scoreCardFH.setVisible(true);
+        scoreCardSS.setVisible(true);
+        scoreCardLS.setVisible(true);
+        scoreCardYAH.setVisible(true);
+        scorecardYAHB.setVisible(true);
+        scoreCardChance.setVisible(true);
+        scoreCardBottom.setVisible(true);
+        scoreCardFinal.setVisible(true);
+
+scoreCardOnes.setText("Ones: " + onesScore);
+scoreCardTwos.setText("Twos: " + twosScore);
+scoreCardThrees.setText("Threes: " + threesScore);
+scoreCardFours.setText("Fours: " + foursScore);
+scoreCardFives.setText("Fives: " + fivesScore);
+scoreCardSixes.setText("Sixes: " + sixesScore);
+scoreCardTopScore.setText("Top Score: " + topScore);
+if(63<=topScore){
+    scoreCardBonus.setText("BONUS: ACHIEVED +35");
+}else{
+    scoreCardBonus.setText("BONUS: NOT ACHIEVED");
+}
+        scoreCardTOK.setText("Three of a Kind: " + threeOfAKindScore);
+        scoreCardFOK.setText("Four of a Kind: " + fourOfAKindScore);
+        scoreCardFH.setText("Full House: " + fullHouseScore);
+        scoreCardSS.setText("Small Straight: " + smallStraightScore);
+        scoreCardLS.setText("Large Straight: " + largeStraightScore);
+        scoreCardYAH.setText("Yahtzee: " + yahtzeeScore);
+        scoreCardChance.setText("Chance: " + chanceScore);
+        scorecardYAHB.setText("Yahztee Bonus: +" + yahtzeeBonusScore);
+        scoreCardBottom.setText("Bottom Score: " + bottomScore);
+        scoreCardFinal.setText("Total Score: " + finalScore);
+    }
+});
+back.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(scoreRollPress){
             roll.setVisible(true);
             score.setVisible(true);
             ones.setVisible(false);
@@ -1119,13 +1472,45 @@ fourOfAKind.addActionListener(new ActionListener() {
             sixes.setVisible(false);
             threeOfAKind.setVisible(false);
             fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
+            scoreCard.setVisible(true);
+            Main.scoreRollPress = false;
+        }else if(scoreCardPress){
+            dice1.setVisible(true);
+            dice2.setVisible(true);
+            dice3.setVisible(true);
+            dice4.setVisible(true);
+            dice5.setVisible(true);
+            roll.setVisible(true);
+            score.setVisible(true);
+            label.setVisible(true);
+            scoreCardOnes.setVisible(false);
+            scoreCardTwos.setVisible(false);
+            scoreCardThrees.setVisible(false);
+            scoreCardFours.setVisible(false);
+            scoreCardFives.setVisible(false);
+            scoreCardSixes.setVisible(false);
+            scoreCardBonus.setVisible(false);
+            scoreCardTopScore.setVisible(false);
+            scoreCardTOK.setVisible(false);
+            scoreCardFOK.setVisible(false);
+            scoreCardFH.setVisible(false);
+            scoreCardSS.setVisible(false);
+            scoreCardLS.setVisible(false);
+            scoreCardYAH.setVisible(false);
+            scorecardYAHB.setVisible(false);
+            scoreCardChance.setVisible(false);
+            scoreCardBottom.setVisible(false);
+            scoreCardFinal.setVisible(false);
+            scoreCard.setVisible(true);
+            Main.scoreCardPress = false;
+        }else{
+            label.setText("There is nothing to go back to");
         }
-    }
-});
-scoreCard.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
     }
 });
     }
