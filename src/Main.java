@@ -413,6 +413,7 @@ back.setVisible(false);
             public void actionPerformed(ActionEvent e) {
                 if(saveDie1==false) {
                     label.setText("You saved the first die");
+                    System.out.println("HI");
                     Main.saveDie1 = true;
                 }else{
                     label.setText("You unsaved the first die");
