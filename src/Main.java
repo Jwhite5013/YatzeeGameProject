@@ -48,6 +48,7 @@ public class Main {
     static boolean smallStraightPlayed = false;
     static boolean largeStraightPlayed = false;
     static boolean yahtzeePlayed = false;
+    static boolean yahtzeeBonusMax = false;
     static int yahtzeeCount = 0;
     static boolean chancePlayed = false;
     public static void main(String[] args) {
@@ -592,9 +593,10 @@ back.setVisible(false);
                 }
                 if(yahtzeePlayed==false){
                     yahtzee.setVisible(true);
-                }if(yahtzeePlayed==false&&yahtzeeCount>0){
-                    yahtzee.setText("Yahtzee Bonus!");
+                }
+                if(yahtzeeBonusMax==false&&yahtzeePlayed==true){
                     yahtzee.setVisible(true);
+                    yahtzee.setText("Yahztee Bonus!");
                 }
             }
         });
@@ -636,7 +638,7 @@ back.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&& fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&& fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -718,7 +720,7 @@ back.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -799,7 +801,7 @@ back.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -880,7 +882,7 @@ back.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -961,7 +963,7 @@ back.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -1043,7 +1045,7 @@ back.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -1190,6 +1192,7 @@ threeOfAKind.addActionListener(new ActionListener() {
             threeOfAKindScore = saveDie1Num+saveDie2Num+saveDie3Num+saveDie4Num+saveDie5Num;
         }
         Main.finalScore += threeOfAKindScore;
+        Main.bottomScore += threeOfAKindScore;
         Main.countRolls = 0;
         dice1.setIcon(blank);
         Main.saveDie1 = false;
@@ -1201,7 +1204,7 @@ threeOfAKind.addActionListener(new ActionListener() {
         Main.saveDie4 = false;
         dice5.setIcon(blank);
         Main.saveDie5= false;
-        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -1348,6 +1351,7 @@ fourOfAKind.addActionListener(new ActionListener() {
             fourOfAKindScore = saveDie1Num+saveDie2Num+saveDie3Num+saveDie4Num+saveDie5Num;
         }
         Main.finalScore += fourOfAKindScore;
+        Main.bottomScore+= fourOfAKindScore;
         Main.countRolls = 0;
         dice1.setIcon(blank);
         Main.saveDie1 = false;
@@ -1359,7 +1363,7 @@ fourOfAKind.addActionListener(new ActionListener() {
         Main.saveDie4 = false;
         dice5.setIcon(blank);
         Main.saveDie5= false;
-        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -1507,6 +1511,7 @@ fullHouse.addActionListener(new ActionListener() {
             Main.fullHouseScore = 25;
         }
         Main.finalScore+=fullHouseScore;
+        Main.bottomScore+=fullHouseScore;
         Main.countRolls = 0;
         dice1.setIcon(blank);
         Main.saveDie1 = false;
@@ -1518,7 +1523,7 @@ fullHouse.addActionListener(new ActionListener() {
         Main.saveDie4 = false;
         dice5.setIcon(blank);
         Main.saveDie5= false;
-        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax){
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -1558,6 +1563,561 @@ fullHouse.addActionListener(new ActionListener() {
             chance.setVisible(false);
             yahtzee.setVisible(false);
 
+            Main.scoreRollPress = false;
+        }
+    }
+});
+smallStraight.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Main.smallStraightPlayed=true;
+        int onesCount = 0;
+        int twosCount = 0;
+        int threesCount = 0;
+        int foursCount = 0;
+        int fivesCount = 0;
+        int sixesCount =0;
+        if(saveDie1Num==1){
+            onesCount++;
+        }
+        if(saveDie2Num==1){
+            onesCount++;
+        }
+        if(saveDie3Num==1){
+            onesCount++;
+        }
+        if(saveDie4Num==1){
+            onesCount++;
+        }
+        if(saveDie5Num==1){
+            onesCount++;
+        }
+        if(saveDie1Num==2){
+            twosCount++;
+        }
+        if(saveDie2Num==2){
+            twosCount++;
+        }
+        if(saveDie3Num==2){
+            twosCount++;
+        }
+        if(saveDie4Num==2){
+            twosCount++;
+        }
+        if(saveDie5Num==2){
+            twosCount++;
+        }
+        if(saveDie1Num==3){
+            threesCount++;
+        }
+        if(saveDie2Num==3){
+            threesCount++;
+        }
+        if(saveDie3Num==3){
+            threesCount++;
+        }
+        if(saveDie4Num==3){
+            threesCount++;
+        }
+        if(saveDie5Num==3){
+            threesCount++;
+        }
+        if(saveDie1Num==4){
+            foursCount++;
+        }
+        if(saveDie2Num==4){
+            foursCount++;
+        }
+        if(saveDie3Num==4){
+            foursCount++;
+        }
+        if(saveDie4Num==4){
+            foursCount++;
+        }
+        if(saveDie5Num==4){
+            foursCount++;
+        }
+        if(saveDie1Num==5){
+            fivesCount++;
+        }
+        if(saveDie2Num==5){
+            fivesCount++;
+        }
+        if(saveDie3Num==5){
+            fivesCount++;
+        }
+        if(saveDie4Num==5){
+            fivesCount++;
+        }
+        if(saveDie5Num==5){
+            fivesCount++;
+        }
+        if(saveDie1Num==6){
+            sixesCount++;
+        }
+        if(saveDie2Num==6){
+            sixesCount++;
+        }
+        if(saveDie3Num==6){
+            sixesCount++;
+        }
+        if(saveDie4Num==6){
+            sixesCount++;
+        }
+        if(saveDie5Num==6){
+            sixesCount++;
+        }
+        if(onesCount>=1&&twosCount>=1&&threesCount>=1&&foursCount>=1||twosCount>=1&&threesCount>=1&&foursCount>=1&&fivesCount>=1||threesCount>=1&&foursCount>=1&&fivesCount>=1&&sixesCount>=1){
+            Main.smallStraightScore = 30;
+        }
+        Main.finalScore+=smallStraightScore;
+        Main.bottomScore+=smallStraightScore;
+        Main.countRolls = 0;
+        dice1.setIcon(blank);
+        Main.saveDie1 = false;
+        dice2.setIcon(blank);
+        Main.saveDie2= false;
+        dice3.setIcon(blank);
+        Main.saveDie3 = false;
+        dice4.setIcon(blank);
+        Main.saveDie4 = false;
+        dice5.setIcon(blank);
+        Main.saveDie5= false;
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax){
+            label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
+            threeOfAKind.setVisible(false);
+            fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
+            dice1.setVisible(false);
+            dice2.setVisible(false);
+            dice3.setVisible(false);
+            dice4.setVisible(false);
+            dice5.setVisible(false);
+            back.setVisible(false);
+            scoreCard.setVisible(true);
+        } else {
+            roll.setVisible(true);
+            score.setVisible(true);
+            scoreCard.setVisible(true);
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
+            threeOfAKind.setVisible(false);
+            fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
+
+            Main.scoreRollPress = false;
+        }
+    }
+});
+largeStraight.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Main.largeStraightPlayed=true;
+        int onesCount = 0;
+        int twosCount = 0;
+        int threesCount = 0;
+        int foursCount = 0;
+        int fivesCount = 0;
+        int sixesCount =0;
+        if(saveDie1Num==1){
+            onesCount++;
+        }
+        if(saveDie2Num==1){
+            onesCount++;
+        }
+        if(saveDie3Num==1){
+            onesCount++;
+        }
+        if(saveDie4Num==1){
+            onesCount++;
+        }
+        if(saveDie5Num==1){
+            onesCount++;
+        }
+        if(saveDie1Num==2){
+            twosCount++;
+        }
+        if(saveDie2Num==2){
+            twosCount++;
+        }
+        if(saveDie3Num==2){
+            twosCount++;
+        }
+        if(saveDie4Num==2){
+            twosCount++;
+        }
+        if(saveDie5Num==2){
+            twosCount++;
+        }
+        if(saveDie1Num==3){
+            threesCount++;
+        }
+        if(saveDie2Num==3){
+            threesCount++;
+        }
+        if(saveDie3Num==3){
+            threesCount++;
+        }
+        if(saveDie4Num==3){
+            threesCount++;
+        }
+        if(saveDie5Num==3){
+            threesCount++;
+        }
+        if(saveDie1Num==4){
+            foursCount++;
+        }
+        if(saveDie2Num==4){
+            foursCount++;
+        }
+        if(saveDie3Num==4){
+            foursCount++;
+        }
+        if(saveDie4Num==4){
+            foursCount++;
+        }
+        if(saveDie5Num==4){
+            foursCount++;
+        }
+        if(saveDie1Num==5){
+            fivesCount++;
+        }
+        if(saveDie2Num==5){
+            fivesCount++;
+        }
+        if(saveDie3Num==5){
+            fivesCount++;
+        }
+        if(saveDie4Num==5){
+            fivesCount++;
+        }
+        if(saveDie5Num==5){
+            fivesCount++;
+        }
+        if(saveDie1Num==6){
+            sixesCount++;
+        }
+        if(saveDie2Num==6){
+            sixesCount++;
+        }
+        if(saveDie3Num==6){
+            sixesCount++;
+        }
+        if(saveDie4Num==6){
+            sixesCount++;
+        }
+        if(saveDie5Num==6){
+            sixesCount++;
+        }
+        if(onesCount==1&&twosCount==1&&threesCount==1&&foursCount==1&&fivesCount==1||twosCount==1&&threesCount==1&&foursCount==1&&fivesCount==1&&sixesCount==1){
+            Main.largeStraightScore = 40;
+        }
+        Main.finalScore+=largeStraightScore;
+        Main.bottomScore+=largeStraightScore;
+        Main.countRolls = 0;
+        dice1.setIcon(blank);
+        Main.saveDie1 = false;
+        dice2.setIcon(blank);
+        Main.saveDie2= false;
+        dice3.setIcon(blank);
+        Main.saveDie3 = false;
+        dice4.setIcon(blank);
+        Main.saveDie4 = false;
+        dice5.setIcon(blank);
+        Main.saveDie5= false;
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax){
+            label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
+            threeOfAKind.setVisible(false);
+            fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
+            dice1.setVisible(false);
+            dice2.setVisible(false);
+            dice3.setVisible(false);
+            dice4.setVisible(false);
+            dice5.setVisible(false);
+            back.setVisible(false);
+            scoreCard.setVisible(true);
+        } else {
+            roll.setVisible(true);
+            score.setVisible(true);
+            scoreCard.setVisible(true);
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
+            threeOfAKind.setVisible(false);
+            fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
+
+            Main.scoreRollPress = false;
+        }
+    }
+});
+yahtzee.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        int onesCount = 0;
+        int twosCount = 0;
+        int threesCount = 0;
+        int foursCount = 0;
+        int fivesCount = 0;
+        int sixesCount = 0;
+        if (saveDie1Num == 1) {
+            onesCount++;
+        }
+        if (saveDie2Num == 1) {
+            onesCount++;
+        }
+        if (saveDie3Num == 1) {
+            onesCount++;
+        }
+        if (saveDie4Num == 1) {
+            onesCount++;
+        }
+        if (saveDie5Num == 1) {
+            onesCount++;
+        }
+        if (saveDie1Num == 2) {
+            twosCount++;
+        }
+        if (saveDie2Num == 2) {
+            twosCount++;
+        }
+        if (saveDie3Num == 2) {
+            twosCount++;
+        }
+        if (saveDie4Num == 2) {
+            twosCount++;
+        }
+        if (saveDie5Num == 2) {
+            twosCount++;
+        }
+        if (saveDie1Num == 3) {
+            threesCount++;
+        }
+        if (saveDie2Num == 3) {
+            threesCount++;
+        }
+        if (saveDie3Num == 3) {
+            threesCount++;
+        }
+        if (saveDie4Num == 3) {
+            threesCount++;
+        }
+        if (saveDie5Num == 3) {
+            threesCount++;
+        }
+        if (saveDie1Num == 4) {
+            foursCount++;
+        }
+        if (saveDie2Num == 4) {
+            foursCount++;
+        }
+        if (saveDie3Num == 4) {
+            foursCount++;
+        }
+        if (saveDie4Num == 4) {
+            foursCount++;
+        }
+        if (saveDie5Num == 4) {
+            foursCount++;
+        }
+        if (saveDie1Num == 5) {
+            fivesCount++;
+        }
+        if (saveDie2Num == 5) {
+            fivesCount++;
+        }
+        if (saveDie3Num == 5) {
+            fivesCount++;
+        }
+        if (saveDie4Num == 5) {
+            fivesCount++;
+        }
+        if (saveDie5Num == 5) {
+            fivesCount++;
+        }
+        if (saveDie1Num == 6) {
+            sixesCount++;
+        }
+        if (saveDie2Num == 6) {
+            sixesCount++;
+        }
+        if (saveDie3Num == 6) {
+            sixesCount++;
+        }
+        if (saveDie4Num == 6) {
+            sixesCount++;
+        }
+        if (saveDie5Num == 6) {
+            sixesCount++;
+        }
+        if(onesCount<=4||twosCount<=4||threesCount<=4||foursCount<=4||fivesCount<=4||sixesCount<=4){
+            Main.yahtzeeCount=3;
+            Main.yahtzeePlayed = true;
+            Main.yahtzeeBonusMax = true;
+        }
+        if (onesCount == 5 && yahtzeeCount == 0 || twosCount == 5 && yahtzeeCount == 0 || threesCount == 5 && yahtzeeCount == 0 || foursCount == 5 && yahtzeeCount == 0 || fivesCount == 5 && yahtzeeCount == 0 || sixesCount == 5 && yahtzeeCount == 0) {
+            Main.yahtzeeScore = 50;
+            Main.finalScore +=50;
+            Main.bottomScore+=50;
+            Main.yahtzeeCount++;
+            Main.yahtzeePlayed = true;
+        } else if (onesCount == 5 && yahtzeeCount > 0 || twosCount == 5 && yahtzeeCount > 0 || threesCount == 5 && yahtzeeCount > 0 || foursCount == 5 && yahtzeeCount > 0 || fivesCount == 5 && yahtzeeCount > 0 || sixesCount == 5 && yahtzeeCount > 0){
+            Main.yahtzeeBonusScore +=100;
+            Main.finalScore+=100;
+            Main.bottomScore+=100;
+            Main.yahtzeeCount++;
+            if(yahtzeeCount<=2){
+                Main.yahtzeeBonusMax = true;
+            }
+    }
+        Main.countRolls = 0;
+        dice1.setIcon(blank);
+        Main.saveDie1 = false;
+        dice2.setIcon(blank);
+        Main.saveDie2= false;
+        dice3.setIcon(blank);
+        Main.saveDie3 = false;
+        dice4.setIcon(blank);
+        Main.saveDie4 = false;
+        dice5.setIcon(blank);
+        Main.saveDie5= false;
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+            label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
+            threeOfAKind.setVisible(false);
+            fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
+            dice1.setVisible(false);
+            dice2.setVisible(false);
+            dice3.setVisible(false);
+            dice4.setVisible(false);
+            dice5.setVisible(false);
+            back.setVisible(false);
+            scoreCard.setVisible(true);
+        } else {
+            roll.setVisible(true);
+            score.setVisible(true);
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
+            threeOfAKind.setVisible(false);
+            fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
+            scoreCard.setVisible(true);
+            Main.scoreRollPress = false;
+        }
+    }
+});
+chance.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Main.chancePlayed = true;
+        Main.chanceScore = saveDie1Num+saveDie2Num+saveDie3Num+saveDie4Num+saveDie5Num;
+        Main.finalScore+=chanceScore;
+        Main.bottomScore += chanceScore;
+        Main.countRolls = 0;
+        dice1.setIcon(blank);
+        Main.saveDie1 = false;
+        dice2.setIcon(blank);
+        Main.saveDie2= false;
+        dice3.setIcon(blank);
+        Main.saveDie3 = false;
+        dice4.setIcon(blank);
+        Main.saveDie4 = false;
+        dice5.setIcon(blank);
+        Main.saveDie5= false;
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+            label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
+            threeOfAKind.setVisible(false);
+            fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
+            dice1.setVisible(false);
+            dice2.setVisible(false);
+            dice3.setVisible(false);
+            dice4.setVisible(false);
+            dice5.setVisible(false);
+            back.setVisible(false);
+            scoreCard.setVisible(true);
+        } else {
+            roll.setVisible(true);
+            score.setVisible(true);
+            ones.setVisible(false);
+            twos.setVisible(false);
+            threes.setVisible(false);
+            fours.setVisible(false);
+            fives.setVisible(false);
+            sixes.setVisible(false);
+            threeOfAKind.setVisible(false);
+            fourOfAKind.setVisible(false);
+            fullHouse.setVisible(false);
+            smallStraight.setVisible(false);
+            largeStraight.setVisible(false);
+            chance.setVisible(false);
+            yahtzee.setVisible(false);
+            scoreCard.setVisible(true);
             Main.scoreRollPress = false;
         }
     }
@@ -1603,6 +2163,7 @@ scoreCardSixes.setText("Sixes: " + sixesScore);
 scoreCardTopScore.setText("Top Score: " + topScore);
 if(63<=topScore){
     scoreCardBonus.setText("BONUS: ACHIEVED +35");
+    Main.topScore+=35;
 }else{
     scoreCardBonus.setText("BONUS: NOT ACHIEVED");
 }
