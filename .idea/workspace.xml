@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="Added Three of a kind">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_14_2024_10_11_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_14_2024_10_11_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="Finished score card, back and all the buttons added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706635007205</updated>
-      <workItem from="1708125755670" duration="8487000" />
+      <workItem from="1708125755670" duration="8581000" />
     </task>
     <task id="LOCAL-00001" summary="Start of Yatzee Project">
       <option name="closed" value="true" />
@@ -169,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708018245658</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Finished score card, back and all the buttons added">
+      <option name="closed" value="true" />
+      <created>1708136951811</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708136951811</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +191,7 @@
     <MESSAGE value="hi" />
     <MESSAGE value="Whoops code" />
     <MESSAGE value="Added Three of a kind" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Three of a kind" />
+    <MESSAGE value="Finished score card, back and all the buttons added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished score card, back and all the buttons added" />
   </component>
 </project>
