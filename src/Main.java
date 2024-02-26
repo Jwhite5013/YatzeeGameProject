@@ -64,6 +64,7 @@ public class Main {
 
         JLabel label = new JLabel("Welcome to Yahtzee! How many computers are you going to play against?");
         JButton roll = new JButton("Roll");
+        JButton again = new JButton("Restart game");
         //Images set
         ImageIcon blank = new ImageIcon("Images/Images copy 2/Blank.png");
         blank.setImage(blank.getImage().getScaledInstance(75,75,Image.SCALE_DEFAULT));
@@ -228,7 +229,9 @@ scoreCard.setBounds(700,100,250,50);
 back.setBounds(100,100,100,50);
 scoreCard.setVisible(false);
 back.setVisible(false);
-
+panel.add(again);
+again.setBounds(100,100,100,50);
+again.setVisible(false);
         panel.add(dice1);
         panel.add(score);
         score.setBounds(0,frame.getHeight()-300, frame.getWidth(), 50);
@@ -660,6 +663,7 @@ back.setVisible(false);
                     dice5.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
+                    again.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -742,6 +746,7 @@ back.setVisible(false);
                     dice5.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
+                    again.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -823,6 +828,7 @@ back.setVisible(false);
                     dice5.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
+                    again.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -904,6 +910,7 @@ back.setVisible(false);
                     dice5.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
+                    again.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -985,6 +992,7 @@ back.setVisible(false);
                     dice5.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
+                    again.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -1067,6 +1075,7 @@ back.setVisible(false);
                     dice5.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
+                    again.setVisible(true);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -1226,6 +1235,7 @@ threeOfAKind.addActionListener(new ActionListener() {
             dice5.setVisible(false);
             back.setVisible(false);
             scoreCard.setVisible(true);
+            again.setVisible(true);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -1385,6 +1395,7 @@ fourOfAKind.addActionListener(new ActionListener() {
             dice5.setVisible(false);
             back.setVisible(false);
             scoreCard.setVisible(true);
+            again.setVisible(true);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -1545,6 +1556,7 @@ fullHouse.addActionListener(new ActionListener() {
             dice5.setVisible(false);
             back.setVisible(false);
             scoreCard.setVisible(true);
+            again.setVisible(true);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -1705,6 +1717,7 @@ smallStraight.addActionListener(new ActionListener() {
             dice5.setVisible(false);
             back.setVisible(false);
             scoreCard.setVisible(true);
+            again.setVisible(true);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -1865,6 +1878,7 @@ largeStraight.addActionListener(new ActionListener() {
             dice5.setVisible(false);
             back.setVisible(false);
             scoreCard.setVisible(true);
+            again.setVisible(true);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -1992,13 +2006,7 @@ yahtzee.addActionListener(new ActionListener() {
             Main.yahtzeePlayed = true;
             Main.yahtzeeBonusMax = true;
         }
-        if (onesCount == 5 && yahtzeeCount == 0 || twosCount == 5 && yahtzeeCount == 0 || threesCount == 5 && yahtzeeCount == 0 || foursCount == 5 && yahtzeeCount == 0 || fivesCount == 5 && yahtzeeCount == 0 || sixesCount == 5 && yahtzeeCount == 0) {
-            Main.yahtzeeScore = 50;
-            Main.finalScore +=50;
-            Main.bottomScore+=50;
-            Main.yahtzeeCount++;
-            Main.yahtzeePlayed = true;
-        } else if (onesCount == 5 && yahtzeeCount > 0 || twosCount == 5 && yahtzeeCount > 0 || threesCount == 5 && yahtzeeCount > 0 || foursCount == 5 && yahtzeeCount > 0 || fivesCount == 5 && yahtzeeCount > 0 || sixesCount == 5 && yahtzeeCount > 0){
+         if (onesCount == 5 && yahtzeeCount > 1 || twosCount == 5 && yahtzeeCount > 0 || threesCount == 5 && yahtzeeCount > 0 || foursCount == 5 && yahtzeeCount > 0 || fivesCount == 5 && yahtzeeCount > 0 || sixesCount == 5 && yahtzeeCount > 0){
             Main.yahtzeeBonusScore +=100;
             Main.finalScore+=100;
             Main.bottomScore+=100;
@@ -2006,7 +2014,13 @@ yahtzee.addActionListener(new ActionListener() {
             if(yahtzeeCount<=2){
                 Main.yahtzeeBonusMax = true;
             }
-    }
+    }else if (onesCount == 5 && yahtzeeCount == 0 || twosCount == 5 && yahtzeeCount == 0 || threesCount == 5 && yahtzeeCount == 0 || foursCount == 5 && yahtzeeCount == 0 || fivesCount == 5 && yahtzeeCount == 0 || sixesCount == 5 && yahtzeeCount == 0) {
+             Main.yahtzeeScore = 50;
+             Main.finalScore +=50;
+             Main.bottomScore+=50;
+             Main.yahtzeeCount++;
+             Main.yahtzeePlayed = true;
+         }
         Main.countRolls = 0;
         dice1.setIcon(blank);
         Main.saveDie1 = false;
@@ -2040,6 +2054,7 @@ yahtzee.addActionListener(new ActionListener() {
             dice5.setVisible(false);
             back.setVisible(false);
             scoreCard.setVisible(true);
+            again.setVisible(true);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -2101,6 +2116,7 @@ chance.addActionListener(new ActionListener() {
             dice5.setVisible(false);
             back.setVisible(false);
             scoreCard.setVisible(true);
+            again.setVisible(true);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -2120,6 +2136,37 @@ chance.addActionListener(new ActionListener() {
             scoreCard.setVisible(true);
             Main.scoreRollPress = false;
         }
+    }
+});
+again.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Main.resetGame();
+        again.setVisible(false);
+        label.setText("Welcome to Yahtzee! Select a option");
+        computer1.setVisible(true);
+        computer2.setVisible(true);
+        computer3.setVisible(true);
+        noComputer.setVisible(true);
+        scoreCard.setVisible(false);
+        scoreCardOnes.setVisible(false);
+        scoreCardTwos.setVisible(false);
+        scoreCardThrees.setVisible(false);
+        scoreCardFours.setVisible(false);
+        scoreCardFives.setVisible(false);
+        scoreCardSixes.setVisible(false);
+        scoreCardBonus.setVisible(false);
+        scoreCardTopScore.setVisible(false);
+        scoreCardTOK.setVisible(false);
+        scoreCardFOK.setVisible(false);
+        scoreCardFH.setVisible(false);
+        scoreCardSS.setVisible(false);
+        scoreCardLS.setVisible(false);
+        scoreCardYAH.setVisible(false);
+        scorecardYAHB.setVisible(false);
+        scoreCardChance.setVisible(false);
+        scoreCardBottom.setVisible(false);
+        scoreCardFinal.setVisible(false);
     }
 });
 scoreCard.addActionListener(new ActionListener() {
@@ -2234,5 +2281,40 @@ back.addActionListener(new ActionListener() {
         }
     }
 });
+    }
+    public static void resetGame(){
+        Main.onesScore = 0;
+        Main.twosScore = 0;
+        Main.threesScore = 0;
+        Main.foursScore = 0;
+        Main.fivesScore = 0;
+        Main.sixesScore = 0;
+        Main.threeOfAKindScore = 0;
+        Main.fourOfAKindScore = 0;
+        Main.fullHouseScore = 0;
+        Main.smallStraightScore = 0;
+        Main.largeStraightScore = 0;
+        Main.yahtzeeCount = 0;
+        Main.yahtzeeBonusScore = 0;
+        Main.yahtzeeScore = 0;
+        Main.countRolls = 0;
+        Main.chanceScore = 0;
+        Main.bottomScore = 0;
+        Main.finalScore = 0;
+        Main.topScore = 0;
+        Main.onesPlayed = false;
+        Main.twosPlayed = false;
+        Main.threesPlayed = false;
+        Main.foursPlayed = false;
+        Main.fivesPlayed = false;
+        Main.sixesPlayed = false;
+        Main.threeOfAKindPlayed = false;
+        Main.fourOfAKindPlayed = false;
+        Main.fullHousePlayed = false;
+        Main.smallStraightPlayed = false;
+        Main.largeStraightPlayed = false;
+        Main.yahtzeeBonusMax = false;
+        Main.yahtzeePlayed = false;
+        Main.chancePlayed = false;
     }
 }
