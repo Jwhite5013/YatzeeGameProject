@@ -306,11 +306,16 @@ again.setVisible(false);
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (countRolls <= 2) {
-                    int dieRoll1 = (int) (Math.random() * 6) + 1;
-                    int dieRoll2 = (int) (Math.random() * 6) + 1;
-                    int dieRoll3 = (int) (Math.random() * 6) + 1;
-                    int dieRoll4 = (int) (Math.random() * 6) + 1;
-                    int dieRoll5 = (int) (Math.random() * 6) + 1;
+//                    int dieRoll1 = (int) (Math.random() * 6) + 1;
+//                    int dieRoll2 = (int) (Math.random() * 6) + 1;
+//                    int dieRoll3 = (int) (Math.random() * 6) + 1;
+//                    int dieRoll4 = (int) (Math.random() * 6) + 1;
+//                    int dieRoll5 = (int) (Math.random() * 6) + 1;
+                    int dieRoll1 = 5;
+                    int dieRoll2 = 5;
+                    int dieRoll3 = 5;
+                    int dieRoll4 = 5;
+                    int dieRoll5 = 5;
                     if (dieRoll1 == 1 && saveDie1 == false) {
                         dice1.setIcon(die1);
                         Main.saveDie1Num = dieRoll1;
@@ -597,7 +602,7 @@ again.setVisible(false);
                 if(yahtzeePlayed==false){
                     yahtzee.setVisible(true);
                 }
-                if(yahtzeeBonusMax==false&&yahtzeePlayed==true){
+                if(yahtzeePlayed==true&&yahtzeeCount>1){
                     yahtzee.setVisible(true);
                     yahtzee.setText("Yahztee Bonus!");
                 }
@@ -2001,26 +2006,21 @@ yahtzee.addActionListener(new ActionListener() {
         if (saveDie5Num == 6) {
             sixesCount++;
         }
-        if(onesCount<=4||twosCount<=4||threesCount<=4||foursCount<=4||fivesCount<=4||sixesCount<=4){
-            Main.yahtzeeCount=3;
-            Main.yahtzeePlayed = true;
-            Main.yahtzeeBonusMax = true;
-        }
-         if (onesCount == 5 && yahtzeeCount > 1 || twosCount == 5 && yahtzeeCount > 0 || threesCount == 5 && yahtzeeCount > 0 || foursCount == 5 && yahtzeeCount > 0 || fivesCount == 5 && yahtzeeCount > 0 || sixesCount == 5 && yahtzeeCount > 0){
-            Main.yahtzeeBonusScore +=100;
-            Main.finalScore+=100;
-            Main.bottomScore+=100;
+    if(onesCount==5||twosCount==5||threesCount==5||foursCount==5||fivesCount==5||sixesCount==5){
+        if(yahtzeeCount==0) {
+            Main.yahtzeeScore = 50;
+            Main.finalScore += 50;
             Main.yahtzeeCount++;
-            if(yahtzeeCount<=2){
-                Main.yahtzeeBonusMax = true;
-            }
-    }else if (onesCount == 5 && yahtzeeCount == 0 || twosCount == 5 && yahtzeeCount == 0 || threesCount == 5 && yahtzeeCount == 0 || foursCount == 5 && yahtzeeCount == 0 || fivesCount == 5 && yahtzeeCount == 0 || sixesCount == 5 && yahtzeeCount == 0) {
-             Main.yahtzeeScore = 50;
-             Main.finalScore +=50;
-             Main.bottomScore+=50;
-             Main.yahtzeeCount++;
-             Main.yahtzeePlayed = true;
-         }
+            Main.yahtzeePlayed=true;
+        }else{
+            Main.yahtzeeBonusScore+=100;
+            Main.finalScore+=100;
+            Main.yahtzeeCount++;
+        }
+    }else{
+        Main.yahtzeePlayed=true;
+        Main.yahtzeeBonusMax=true;
+    }
         Main.countRolls = 0;
         dice1.setIcon(blank);
         Main.saveDie1 = false;
@@ -2144,6 +2144,7 @@ again.addActionListener(new ActionListener() {
         Main.resetGame();
         again.setVisible(false);
         label.setText("Welcome to Yahtzee! Select a option");
+        label.setVisible(true);
         computer1.setVisible(true);
         computer2.setVisible(true);
         computer3.setVisible(true);
