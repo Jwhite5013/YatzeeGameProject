@@ -236,6 +236,7 @@ again.setVisible(false);
         panel.add(score);
         score.setBounds(0,frame.getHeight()-300, frame.getWidth(), 50);
         dice1.setBounds(100,200,100,100);
+        dice1.setBackground(Color.GREEN);
         dice2.setBounds(275,200,100,100);
         dice3.setBounds(450,200,100,100);
         dice4.setBounds(625,200,100,100);
@@ -306,16 +307,11 @@ again.setVisible(false);
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (countRolls <= 2) {
-//                    int dieRoll1 = (int) (Math.random() * 6) + 1;
-//                    int dieRoll2 = (int) (Math.random() * 6) + 1;
-//                    int dieRoll3 = (int) (Math.random() * 6) + 1;
-//                    int dieRoll4 = (int) (Math.random() * 6) + 1;
-//                    int dieRoll5 = (int) (Math.random() * 6) + 1;
-                    int dieRoll1 = 5;
-                    int dieRoll2 = 5;
-                    int dieRoll3 = 5;
-                    int dieRoll4 = 5;
-                    int dieRoll5 = 5;
+                    int dieRoll1 = (int) (Math.random() * 6) + 1;
+                    int dieRoll2 = (int) (Math.random() * 6) + 1;
+                    int dieRoll3 = (int) (Math.random() * 6) + 1;
+                    int dieRoll4 = (int) (Math.random() * 6) + 1;
+                    int dieRoll5 = (int) (Math.random() * 6) + 1;
                     if (dieRoll1 == 1 && saveDie1 == false) {
                         dice1.setIcon(die1);
                         Main.saveDie1Num = dieRoll1;
@@ -422,11 +418,12 @@ again.setVisible(false);
             public void actionPerformed(ActionEvent e) {
                 if(saveDie1==false) {
                     label.setText("You saved the first die");
-                    System.out.println("HI");
                     Main.saveDie1 = true;
+                    System.out.println("Hello");
                 }else{
                     label.setText("You unsaved the first die");
                     Main.saveDie1 = false;
+
                 }
 
             }
@@ -437,6 +434,7 @@ again.setVisible(false);
                 if(saveDie2==false) {
                     label.setText("You saved the second die");
                     Main.saveDie2 = true;
+
                 }else{
                     label.setText("You unsaved the second die");
                     Main.saveDie2 = false;
@@ -602,7 +600,7 @@ again.setVisible(false);
                 if(yahtzeePlayed==false){
                     yahtzee.setVisible(true);
                 }
-                if(yahtzeePlayed==true&&yahtzeeCount>1){
+                if(yahtzeePlayed==true&&yahtzeeCount>=1){
                     yahtzee.setVisible(true);
                     yahtzee.setText("Yahztee Bonus!");
                 }
@@ -646,7 +644,7 @@ again.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&& fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&& fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -729,7 +727,7 @@ again.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -811,7 +809,7 @@ again.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -893,7 +891,7 @@ again.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -975,7 +973,7 @@ again.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -1058,7 +1056,7 @@ again.setVisible(false);
                         Main.finalScore += 35;
                     }
                 }
-                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+                if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -1218,7 +1216,7 @@ threeOfAKind.addActionListener(new ActionListener() {
         Main.saveDie4 = false;
         dice5.setIcon(blank);
         Main.saveDie5= false;
-        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -1378,7 +1376,7 @@ fourOfAKind.addActionListener(new ActionListener() {
         Main.saveDie4 = false;
         dice5.setIcon(blank);
         Main.saveDie5= false;
-        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -1539,7 +1537,7 @@ fullHouse.addActionListener(new ActionListener() {
         Main.saveDie4 = false;
         dice5.setIcon(blank);
         Main.saveDie5= false;
-        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax){
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -1700,7 +1698,7 @@ smallStraight.addActionListener(new ActionListener() {
         Main.saveDie4 = false;
         dice5.setIcon(blank);
         Main.saveDie5= false;
-        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax){
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -1861,7 +1859,7 @@ largeStraight.addActionListener(new ActionListener() {
         Main.saveDie4 = false;
         dice5.setIcon(blank);
         Main.saveDie5= false;
-        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax){
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -2019,7 +2017,6 @@ yahtzee.addActionListener(new ActionListener() {
         }
     }else{
         Main.yahtzeePlayed=true;
-        Main.yahtzeeBonusMax=true;
     }
         Main.countRolls = 0;
         dice1.setIcon(blank);
@@ -2032,7 +2029,7 @@ yahtzee.addActionListener(new ActionListener() {
         Main.saveDie4 = false;
         dice5.setIcon(blank);
         Main.saveDie5= false;
-        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -2094,7 +2091,7 @@ chance.addActionListener(new ActionListener() {
         Main.saveDie4 = false;
         dice5.setIcon(blank);
         Main.saveDie5= false;
-        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed&&yahtzeeBonusMax) {
+        if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
