@@ -89,6 +89,13 @@ public class Main {
         JButton dice3 = new JButton("");
         JButton dice4 = new JButton("");
         JButton dice5 = new JButton("");
+        JLabel dice1Label = new JLabel("Saved die: No");
+        JLabel dice2Label = new JLabel("Saved die: No");
+        JLabel dice3Label = new JLabel("Saved die: No");
+        JLabel dice4Label = new JLabel("Saved die: No");
+        JLabel dice5Label = new JLabel("Saved die: No");
+
+
 //scoring buttons
         JButton ones = new JButton("Ones");
         JButton twos = new JButton("Twos");
@@ -236,11 +243,25 @@ again.setVisible(false);
         panel.add(score);
         score.setBounds(0,frame.getHeight()-300, frame.getWidth(), 50);
         dice1.setBounds(100,200,100,100);
-        dice1.setBackground(Color.GREEN);
+        dice1Label.setBounds(100,310,100,50);
+        panel.add(dice1Label);
+        dice1Label.setVisible(false);
         dice2.setBounds(275,200,100,100);
+        dice2Label.setBounds(450,310,100,100);
+        panel.add(dice2Label);
+        dice2Label.setVisible(false);
         dice3.setBounds(450,200,100,100);
+        dice3Label.setBounds(450,310,100,100);
+        panel.add(dice3Label);
+        dice3Label.setVisible(false);
         dice4.setBounds(625,200,100,100);
+        dice4Label.setBounds(625,310,100,100);
+        panel.add(dice4Label);
+        dice4Label.setVisible(false);
         dice5.setBounds(800,200,100,100);
+        dice5Label.setBounds(800,310,100,100);
+        panel.add(dice5Label);
+        dice5Label.setVisible(false);
         panel.add(dice2);
         panel.add(dice3);
         panel.add(dice4);
@@ -420,9 +441,11 @@ again.setVisible(false);
                     label.setText("You saved the first die");
                     Main.saveDie1 = true;
                     System.out.println("Hello");
+                    dice1Label.setText("Saved die: Yes");
                 }else{
                     label.setText("You unsaved the first die");
                     Main.saveDie1 = false;
+                    dice1Label.setText("Saved die: No");
 
                 }
 
@@ -434,10 +457,12 @@ again.setVisible(false);
                 if(saveDie2==false) {
                     label.setText("You saved the second die");
                     Main.saveDie2 = true;
+                    dice2Label.setText("Saved die: Yes");
 
                 }else{
                     label.setText("You unsaved the second die");
                     Main.saveDie2 = false;
+                    dice2Label.setText("Saved die: No");
                 }
             }
         });
@@ -447,9 +472,11 @@ again.setVisible(false);
                 if(saveDie3==false) {
                     label.setText("You saved the third die");
                     Main.saveDie3 = true;
+                    dice3Label.setText("Saved die: Yes");
                 }else{
                     label.setText("You unsaved the third die");
                     Main.saveDie3 = false;
+                    dice3Label.setText("Saved die: No");
                 }
             }
         });
@@ -459,9 +486,11 @@ again.setVisible(false);
                 if(saveDie4==false) {
                     label.setText("You saved the forth die");
                     Main.saveDie4 = true;
+                    dice4Label.setText("Saved die: Yes");
                 }else{
                     label.setText("You unsaved the forth die");
                     Main.saveDie4 = false;
+                    dice4Label.setText("Saved die: No");
                 }
             }
         });
@@ -471,9 +500,11 @@ again.setVisible(false);
                 if(saveDie5==false) {
                     label.setText("You saved the fifth die");
                     Main.saveDie5 = true;
+                    dice5Label.setText("Saved die: Yes");
                 }else{
                     label.setText("You unsaved the fifth die");
                     Main.saveDie5 = false;
+                    dice5Label.setText("Saved die: No");
                 }
             }
         });
@@ -493,6 +524,11 @@ again.setVisible(false);
                 computer2.setVisible(false);
                 computer3.setVisible(false);
                 noComputer.setVisible(false);
+                dice1Label.setVisible(true);
+                dice2Label.setVisible(true);
+                dice3Label.setVisible(true);
+                dice4Label.setVisible(true);
+                dice5Label.setVisible(true);
                 label.setText("Your turn to roll");
             }
         });
@@ -512,6 +548,11 @@ again.setVisible(false);
                 computer2.setVisible(false);
                 computer3.setVisible(false);
                 noComputer.setVisible(false);
+                dice1Label.setVisible(true);
+                dice2Label.setVisible(true);
+                dice3Label.setVisible(true);
+                dice4Label.setVisible(true);
+                dice5Label.setVisible(true);
                 label.setText("Your turn to roll");
             }
         });
@@ -531,6 +572,11 @@ again.setVisible(false);
                 computer2.setVisible(false);
                 computer3.setVisible(false);
                 noComputer.setVisible(false);
+                dice1Label.setVisible(true);
+                dice2Label.setVisible(true);
+                dice3Label.setVisible(true);
+                dice4Label.setVisible(true);
+                dice5Label.setVisible(true);
                 label.setText("Your turn to roll");
             }
         });
@@ -550,6 +596,11 @@ again.setVisible(false);
                 computer2.setVisible(false);
                 computer3.setVisible(false);
                 noComputer.setVisible(false);
+                dice1Label.setVisible(true);
+                dice2Label.setVisible(true);
+                dice3Label.setVisible(true);
+                dice4Label.setVisible(true);
+                dice5Label.setVisible(true);
                 label.setText("Your turn to roll");
             }
         });
