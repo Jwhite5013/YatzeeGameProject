@@ -247,19 +247,19 @@ again.setVisible(false);
         panel.add(dice1Label);
         dice1Label.setVisible(false);
         dice2.setBounds(275,200,100,100);
-        dice2Label.setBounds(450,310,100,100);
+        dice2Label.setBounds(275,310,100,50);
         panel.add(dice2Label);
         dice2Label.setVisible(false);
         dice3.setBounds(450,200,100,100);
-        dice3Label.setBounds(450,310,100,100);
+        dice3Label.setBounds(450,310,100,50);
         panel.add(dice3Label);
         dice3Label.setVisible(false);
         dice4.setBounds(625,200,100,100);
-        dice4Label.setBounds(625,310,100,100);
+        dice4Label.setBounds(625,310,100,50);
         panel.add(dice4Label);
         dice4Label.setVisible(false);
         dice5.setBounds(800,200,100,100);
-        dice5Label.setBounds(800,310,100,100);
+        dice5Label.setBounds(800,310,100,50);
         panel.add(dice5Label);
         dice5Label.setVisible(false);
         panel.add(dice2);
@@ -440,7 +440,6 @@ again.setVisible(false);
                 if(saveDie1==false) {
                     label.setText("You saved the first die");
                     Main.saveDie1 = true;
-                    System.out.println("Hello");
                     dice1Label.setText("Saved die: Yes");
                 }else{
                     label.setText("You unsaved the first die");
@@ -530,6 +529,11 @@ again.setVisible(false);
                 dice4Label.setVisible(true);
                 dice5Label.setVisible(true);
                 label.setText("Your turn to roll");
+                dice5Label.setText("Saved die: No");
+                dice4Label.setText("Saved die: No");
+                dice3Label.setText("Saved die: No");
+                dice2Label.setText("Saved die: No");
+                dice1Label.setText("Saved die: No");
             }
         });
         computer2.addActionListener(new ActionListener() {
@@ -554,6 +558,11 @@ again.setVisible(false);
                 dice4Label.setVisible(true);
                 dice5Label.setVisible(true);
                 label.setText("Your turn to roll");
+                dice5Label.setText("Saved die: No");
+                dice4Label.setText("Saved die: No");
+                dice3Label.setText("Saved die: No");
+                dice2Label.setText("Saved die: No");
+                dice1Label.setText("Saved die: No");
             }
         });
         computer3.addActionListener(new ActionListener() {
@@ -578,6 +587,11 @@ again.setVisible(false);
                 dice4Label.setVisible(true);
                 dice5Label.setVisible(true);
                 label.setText("Your turn to roll");
+                dice5Label.setText("Saved die: No");
+                dice4Label.setText("Saved die: No");
+                dice3Label.setText("Saved die: No");
+                dice2Label.setText("Saved die: No");
+                dice1Label.setText("Saved die: No");
             }
         });
         noComputer.addActionListener(new ActionListener() {
@@ -602,6 +616,11 @@ again.setVisible(false);
                 dice4Label.setVisible(true);
                 dice5Label.setVisible(true);
                 label.setText("Your turn to roll");
+                dice5Label.setText("Saved die: No");
+                dice4Label.setText("Saved die: No");
+                dice3Label.setText("Saved die: No");
+                dice2Label.setText("Saved die: No");
+                dice1Label.setText("Saved die: No");
             }
         });
         score.addActionListener(new ActionListener() {
@@ -651,7 +670,103 @@ again.setVisible(false);
                 if(yahtzeePlayed==false){
                     yahtzee.setVisible(true);
                 }
-                if(yahtzeePlayed==true&&yahtzeeCount>=1){
+                int onesCount = 0;
+                int twosCount = 0;
+                int threesCount = 0;
+                int foursCount = 0;
+                int fivesCount = 0;
+                int sixesCount =0;
+                if(saveDie1Num==1){
+                    onesCount++;
+                }
+                if(saveDie2Num==1){
+                    onesCount++;
+                }
+                if(saveDie3Num==1){
+                    onesCount++;
+                }
+                if(saveDie4Num==1){
+                    onesCount++;
+                }
+                if(saveDie5Num==1){
+                    onesCount++;
+                }
+                if(saveDie1Num==2){
+                    twosCount++;
+                }
+                if(saveDie2Num==2){
+                    twosCount++;
+                }
+                if(saveDie3Num==2){
+                    twosCount++;
+                }
+                if(saveDie4Num==2){
+                    twosCount++;
+                }
+                if(saveDie5Num==2){
+                    twosCount++;
+                }
+                if(saveDie1Num==3){
+                    threesCount++;
+                }
+                if(saveDie2Num==3){
+                    threesCount++;
+                }
+                if(saveDie3Num==3){
+                    threesCount++;
+                }
+                if(saveDie4Num==3){
+                    threesCount++;
+                }
+                if(saveDie5Num==3){
+                    threesCount++;
+                }
+                if(saveDie1Num==4){
+                    foursCount++;
+                }
+                if(saveDie2Num==4){
+                    foursCount++;
+                }
+                if(saveDie3Num==4){
+                    foursCount++;
+                }
+                if(saveDie4Num==4){
+                    foursCount++;
+                }
+                if(saveDie5Num==4){
+                    foursCount++;
+                }
+                if(saveDie1Num==5){
+                    fivesCount++;
+                }
+                if(saveDie2Num==5){
+                    fivesCount++;
+                }
+                if(saveDie3Num==5){
+                    fivesCount++;
+                }
+                if(saveDie4Num==5){
+                    fivesCount++;
+                }
+                if(saveDie5Num==5){
+                    fivesCount++;
+                }
+                if(saveDie1Num==6){
+                    sixesCount++;
+                }
+                if(saveDie2Num==6){
+                    sixesCount++;
+                }
+                if(saveDie3Num==6){
+                    sixesCount++;
+                }
+                if(saveDie4Num==6){
+                    sixesCount++;
+                }
+                if(saveDie5Num==6){
+                    sixesCount++;
+                }
+                if(onesCount==5&&yahtzeeCount>0||twosCount==5&&yahtzeeCount>0||threesCount==5&&yahtzeeCount>0||foursCount==5&&yahtzeeCount>0||fivesCount==5&&yahtzeeCount>0||sixesCount==5&&yahtzeeCount>0){
                     yahtzee.setVisible(true);
                     yahtzee.setText("Yahztee Bonus!");
                 }
@@ -693,6 +808,7 @@ again.setVisible(false);
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
                     if (topScore >= 63) {
                         Main.finalScore += 35;
+                        Main.topScore+=35;
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&& fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
@@ -718,6 +834,11 @@ again.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
                     again.setVisible(true);
+                    dice1Label.setVisible(false);
+                    dice2Label.setVisible(false);
+                    dice3Label.setVisible(false);
+                    dice4Label.setVisible(false);
+                    dice5Label.setVisible(false);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -736,6 +857,11 @@ again.setVisible(false);
                     yahtzee.setVisible(false);
                     scoreCard.setVisible(true);
                    Main.scoreRollPress = false;
+                    dice5Label.setText("Saved die: No");
+                    dice4Label.setText("Saved die: No");
+                    dice3Label.setText("Saved die: No");
+                    dice2Label.setText("Saved die: No");
+                    dice1Label.setText("Saved die: No");
                 }
 
             }
@@ -776,6 +902,7 @@ again.setVisible(false);
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
                     if (topScore >= 63) {
                         Main.finalScore += 35;
+                        Main.topScore+=35;
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
@@ -801,6 +928,11 @@ again.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
                     again.setVisible(true);
+                    dice1Label.setVisible(false);
+                    dice2Label.setVisible(false);
+                    dice3Label.setVisible(false);
+                    dice4Label.setVisible(false);
+                    dice5Label.setVisible(false);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -819,6 +951,11 @@ again.setVisible(false);
                     yahtzee.setVisible(false);
                     scoreCard.setVisible(true);
                     Main.scoreRollPress = false;
+                    dice5Label.setText("Saved die: No");
+                    dice4Label.setText("Saved die: No");
+                    dice3Label.setText("Saved die: No");
+                    dice2Label.setText("Saved die: No");
+                    dice1Label.setText("Saved die: No");
                 }
             }
         });
@@ -858,6 +995,7 @@ again.setVisible(false);
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
                     if (topScore >= 63) {
                         Main.finalScore += 35;
+                        Main.topScore+=35;
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
@@ -883,6 +1021,11 @@ again.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
                     again.setVisible(true);
+                    dice1Label.setVisible(false);
+                    dice2Label.setVisible(false);
+                    dice3Label.setVisible(false);
+                    dice4Label.setVisible(false);
+                    dice5Label.setVisible(false);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -901,6 +1044,11 @@ again.setVisible(false);
                     yahtzee.setVisible(false);
                     scoreCard.setVisible(true);
                     Main.scoreRollPress = false;
+                    dice5Label.setText("Saved die: No");
+                    dice4Label.setText("Saved die: No");
+                    dice3Label.setText("Saved die: No");
+                    dice2Label.setText("Saved die: No");
+                    dice1Label.setText("Saved die: No");
                 }
             }
         });
@@ -940,6 +1088,7 @@ again.setVisible(false);
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
                     if (topScore >= 63) {
                         Main.finalScore += 35;
+                        Main.topScore+=35;
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
@@ -965,6 +1114,11 @@ again.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
                     again.setVisible(true);
+                    dice1Label.setVisible(false);
+                    dice2Label.setVisible(false);
+                    dice3Label.setVisible(false);
+                    dice4Label.setVisible(false);
+                    dice5Label.setVisible(false);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -983,6 +1137,11 @@ again.setVisible(false);
                     yahtzee.setVisible(false);
                     scoreCard.setVisible(true);
                     Main.scoreRollPress = false;
+                    dice5Label.setText("Saved die: No");
+                    dice4Label.setText("Saved die: No");
+                    dice3Label.setText("Saved die: No");
+                    dice2Label.setText("Saved die: No");
+                    dice1Label.setText("Saved die: No");
                 }
             }
         });
@@ -1022,6 +1181,7 @@ again.setVisible(false);
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
                     if (topScore >= 63) {
                         Main.finalScore += 35;
+                        Main.topScore+=35;
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
@@ -1047,6 +1207,11 @@ again.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
                     again.setVisible(true);
+                    dice1Label.setVisible(false);
+                    dice2Label.setVisible(false);
+                    dice3Label.setVisible(false);
+                    dice4Label.setVisible(false);
+                    dice5Label.setVisible(false);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -1065,6 +1230,11 @@ again.setVisible(false);
                     yahtzee.setVisible(false);
                     scoreCard.setVisible(true);
                     Main.scoreRollPress = false;
+                    dice5Label.setText("Saved die: No");
+                    dice4Label.setText("Saved die: No");
+                    dice3Label.setText("Saved die: No");
+                    dice2Label.setText("Saved die: No");
+                    dice1Label.setText("Saved die: No");
 
                 }
             }
@@ -1105,6 +1275,7 @@ again.setVisible(false);
                 if(onesPlayed&&twosPlayed&&threesPlayed&&foursPlayed&&fivesPlayed&&sixesPlayed) {
                     if (topScore >= 63) {
                         Main.finalScore += 35;
+                        Main.topScore+=35;
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
@@ -1130,6 +1301,11 @@ again.setVisible(false);
                     back.setVisible(false);
                     scoreCard.setVisible(true);
                     again.setVisible(true);
+                    dice1Label.setVisible(false);
+                    dice2Label.setVisible(false);
+                    dice3Label.setVisible(false);
+                    dice4Label.setVisible(false);
+                    dice5Label.setVisible(false);
                 } else {
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -1148,6 +1324,11 @@ again.setVisible(false);
                     yahtzee.setVisible(false);
                     scoreCard.setVisible(true);
                     Main.scoreRollPress = false;
+                    dice5Label.setText("Saved die: No");
+                    dice4Label.setText("Saved die: No");
+                    dice3Label.setText("Saved die: No");
+                    dice2Label.setText("Saved die: No");
+                    dice1Label.setText("Saved die: No");
                 }
             }
         });
@@ -1290,6 +1471,11 @@ threeOfAKind.addActionListener(new ActionListener() {
             back.setVisible(false);
             scoreCard.setVisible(true);
             again.setVisible(true);
+            dice1Label.setVisible(false);
+            dice2Label.setVisible(false);
+            dice3Label.setVisible(false);
+            dice4Label.setVisible(false);
+            dice5Label.setVisible(false);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -1308,6 +1494,11 @@ threeOfAKind.addActionListener(new ActionListener() {
             yahtzee.setVisible(false);
             scoreCard.setVisible(true);
             Main.scoreRollPress = false;
+            dice5Label.setText("Saved die: No");
+            dice4Label.setText("Saved die: No");
+            dice3Label.setText("Saved die: No");
+            dice2Label.setText("Saved die: No");
+            dice1Label.setText("Saved die: No");
         }
     }
 });
@@ -1450,6 +1641,11 @@ fourOfAKind.addActionListener(new ActionListener() {
             back.setVisible(false);
             scoreCard.setVisible(true);
             again.setVisible(true);
+            dice1Label.setVisible(false);
+            dice2Label.setVisible(false);
+            dice3Label.setVisible(false);
+            dice4Label.setVisible(false);
+            dice5Label.setVisible(false);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -1467,7 +1663,11 @@ fourOfAKind.addActionListener(new ActionListener() {
             largeStraight.setVisible(false);
             chance.setVisible(false);
             yahtzee.setVisible(false);
-
+            dice5Label.setText("Saved die: No");
+            dice4Label.setText("Saved die: No");
+            dice3Label.setText("Saved die: No");
+            dice2Label.setText("Saved die: No");
+            dice1Label.setText("Saved die: No");
             Main.scoreRollPress = false;
         }
     }
@@ -1611,6 +1811,11 @@ fullHouse.addActionListener(new ActionListener() {
             back.setVisible(false);
             scoreCard.setVisible(true);
             again.setVisible(true);
+            dice1Label.setVisible(false);
+            dice2Label.setVisible(false);
+            dice3Label.setVisible(false);
+            dice4Label.setVisible(false);
+            dice5Label.setVisible(false);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -1628,7 +1833,11 @@ fullHouse.addActionListener(new ActionListener() {
             largeStraight.setVisible(false);
             chance.setVisible(false);
             yahtzee.setVisible(false);
-
+            dice5Label.setText("Saved die: No");
+            dice4Label.setText("Saved die: No");
+            dice3Label.setText("Saved die: No");
+            dice2Label.setText("Saved die: No");
+            dice1Label.setText("Saved die: No");
             Main.scoreRollPress = false;
         }
     }
@@ -1772,6 +1981,11 @@ smallStraight.addActionListener(new ActionListener() {
             back.setVisible(false);
             scoreCard.setVisible(true);
             again.setVisible(true);
+            dice1Label.setVisible(false);
+            dice2Label.setVisible(false);
+            dice3Label.setVisible(false);
+            dice4Label.setVisible(false);
+            dice5Label.setVisible(false);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -1789,7 +2003,11 @@ smallStraight.addActionListener(new ActionListener() {
             largeStraight.setVisible(false);
             chance.setVisible(false);
             yahtzee.setVisible(false);
-
+            dice5Label.setText("Saved die: No");
+            dice4Label.setText("Saved die: No");
+            dice3Label.setText("Saved die: No");
+            dice2Label.setText("Saved die: No");
+            dice1Label.setText("Saved die: No");
             Main.scoreRollPress = false;
         }
     }
@@ -1933,6 +2151,11 @@ largeStraight.addActionListener(new ActionListener() {
             back.setVisible(false);
             scoreCard.setVisible(true);
             again.setVisible(true);
+            dice1Label.setVisible(false);
+            dice2Label.setVisible(false);
+            dice3Label.setVisible(false);
+            dice4Label.setVisible(false);
+            dice5Label.setVisible(false);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -1950,7 +2173,11 @@ largeStraight.addActionListener(new ActionListener() {
             largeStraight.setVisible(false);
             chance.setVisible(false);
             yahtzee.setVisible(false);
-
+            dice5Label.setText("Saved die: No");
+            dice4Label.setText("Saved die: No");
+            dice3Label.setText("Saved die: No");
+            dice2Label.setText("Saved die: No");
+            dice1Label.setText("Saved die: No");
             Main.scoreRollPress = false;
         }
     }
@@ -2066,8 +2293,9 @@ yahtzee.addActionListener(new ActionListener() {
             Main.finalScore+=100;
             Main.yahtzeeCount++;
         }
-    }else{
+    }if(onesCount<=4&&twosCount<=4&&threesCount<=4&&foursCount<=4&&fivesCount<=4&&sixesCount<=4){
         Main.yahtzeePlayed=true;
+        Main.yahtzeeCount=0;
     }
         Main.countRolls = 0;
         dice1.setIcon(blank);
@@ -2103,6 +2331,11 @@ yahtzee.addActionListener(new ActionListener() {
             back.setVisible(false);
             scoreCard.setVisible(true);
             again.setVisible(true);
+            dice1Label.setVisible(false);
+            dice2Label.setVisible(false);
+            dice3Label.setVisible(false);
+            dice4Label.setVisible(false);
+            dice5Label.setVisible(false);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -2121,6 +2354,11 @@ yahtzee.addActionListener(new ActionListener() {
             yahtzee.setVisible(false);
             scoreCard.setVisible(true);
             Main.scoreRollPress = false;
+            dice5Label.setText("Saved die: No");
+            dice4Label.setText("Saved die: No");
+            dice3Label.setText("Saved die: No");
+            dice2Label.setText("Saved die: No");
+            dice1Label.setText("Saved die: No");
         }
     }
 });
@@ -2165,6 +2403,11 @@ chance.addActionListener(new ActionListener() {
             back.setVisible(false);
             scoreCard.setVisible(true);
             again.setVisible(true);
+            dice1Label.setVisible(false);
+            dice2Label.setVisible(false);
+            dice3Label.setVisible(false);
+            dice4Label.setVisible(false);
+            dice5Label.setVisible(false);
         } else {
             roll.setVisible(true);
             score.setVisible(true);
@@ -2183,6 +2426,11 @@ chance.addActionListener(new ActionListener() {
             yahtzee.setVisible(false);
             scoreCard.setVisible(true);
             Main.scoreRollPress = false;
+            dice5Label.setText("Saved die: No");
+            dice4Label.setText("Saved die: No");
+            dice3Label.setText("Saved die: No");
+            dice2Label.setText("Saved die: No");
+            dice1Label.setText("Saved die: No");
         }
     }
 });
@@ -2249,6 +2497,11 @@ scoreCardOnes.setVisible(true);
         scoreCardChance.setVisible(true);
         scoreCardBottom.setVisible(true);
         scoreCardFinal.setVisible(true);
+        dice5Label.setVisible(false);
+        dice4Label.setVisible(false);
+        dice3Label.setVisible(false);
+        dice2Label.setVisible(false);
+        dice1Label.setVisible(false);
 
 scoreCardOnes.setText("Ones: " + onesScore);
 scoreCardTwos.setText("Twos: " + twosScore);
@@ -2305,6 +2558,11 @@ back.addActionListener(new ActionListener() {
             roll.setVisible(true);
             score.setVisible(true);
             label.setVisible(true);
+            dice5Label.setVisible(true);
+            dice4Label.setVisible(true);
+            dice3Label.setVisible(true);
+            dice2Label.setVisible(true);
+            dice1Label.setVisible(true);
             scoreCardOnes.setVisible(false);
             scoreCardTwos.setVisible(false);
             scoreCardThrees.setVisible(false);
