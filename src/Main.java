@@ -237,7 +237,7 @@ back.setBounds(100,100,100,50);
 scoreCard.setVisible(false);
 back.setVisible(false);
 panel.add(again);
-again.setBounds(100,100,100,50);
+again.setBounds(100,100,150,50);
 again.setVisible(false);
         panel.add(dice1);
         panel.add(score);
