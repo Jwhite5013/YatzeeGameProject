@@ -172,6 +172,6 @@ public class AI {
         if(d5==6){
             sixesCount++;
         }
-        if()
+
     }
 }
