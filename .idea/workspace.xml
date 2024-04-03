@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="Started doing the AI">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI.java" afterDir="false" />
-    </list>
+    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="Started Ai and finished a little" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711038704945</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Started Ai and finished a little">
+      <option name="closed" value="true" />
+      <created>1711125021420</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1711125021420</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +233,7 @@
     <MESSAGE value="Added Three of a kind" />
     <MESSAGE value="Added Play again" />
     <MESSAGE value="Started doing the AI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started doing the AI" />
+    <MESSAGE value="Started Ai and finished a little" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started Ai and finished a little" />
   </component>
 </project>
