@@ -77,7 +77,37 @@ public class AI {
         }
         return score;
     }
+public static boolean isFullHouse(int[]dice){
+    int ones = 0;
+    int twos = 0;
+    int threes = 0;
+    int fours = 0;
+    int fives = 0;
+    int sixes = 0;
+    for (int count : dice) {
+        if (count == 1) {
+            ones++;
+        }
+        if (count == 2) {
+            twos++;
+        }
+        if (count == 3) {
+            threes++;
+        }
+        if (count == 4) {
+            fours++;
+        }
+        if (count == 5) {
+            fives++;
+        }
+        if (count == 6) {
+            sixes++;
+        }
+    }
+    if(ones==3&&twos==2||ones==3&&threes==2||ones==3&&fours==2||ones==3&&fives==2||ones==3&&sixes==2||twos==3&&ones==2||twos==3&&threes==2||twos==3&&fours==2||twos==3&&fives==2||twos==3&&sixes==2||threes==3&&twos==2||threes==3&&ones==2||threes==3&&fours==2||threes==3&&fives==2||threes==3&&sixes==2||fours==3&&twos==2||fours==3&&threes==2||fours==3&&ones==2||fours==3&&fives==2||fours==3&&sixes==2||fives==3&&twos==2||fives==3&&threes==2||fives==3&&fours==2||fives==3&&ones==2||fives==3&&sixes==2||sixes==3&&twos==2||sixes==3&&threes==2||sixes==3&&fours==2||sixes==3&&fives==2||sixes==3&&ones==2){
 
+    }
+}
     // Checks if the dice have a "Three of a Kind" combination
     public static boolean isThreeOfAKind(int[] dice) {
         for (int i = 1; i <= 6; i++) {
