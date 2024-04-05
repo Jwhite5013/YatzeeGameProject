@@ -105,8 +105,9 @@ public static boolean isFullHouse(int[]dice){
         }
     }
     if(ones==3&&twos==2||ones==3&&threes==2||ones==3&&fours==2||ones==3&&fives==2||ones==3&&sixes==2||twos==3&&ones==2||twos==3&&threes==2||twos==3&&fours==2||twos==3&&fives==2||twos==3&&sixes==2||threes==3&&twos==2||threes==3&&ones==2||threes==3&&fours==2||threes==3&&fives==2||threes==3&&sixes==2||fours==3&&twos==2||fours==3&&threes==2||fours==3&&ones==2||fours==3&&fives==2||fours==3&&sixes==2||fives==3&&twos==2||fives==3&&threes==2||fives==3&&fours==2||fives==3&&ones==2||fives==3&&sixes==2||sixes==3&&twos==2||sixes==3&&threes==2||sixes==3&&fours==2||sixes==3&&fives==2||sixes==3&&ones==2){
-
+return true;
     }
+    return false;
 }
     // Checks if the dice have a "Three of a Kind" combination
     public static boolean isThreeOfAKind(int[] dice) {
