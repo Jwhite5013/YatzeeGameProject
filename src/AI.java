@@ -14,34 +14,19 @@ public class AI {
     }
     public static int calculateScore(int[] dice) {
         int score = 0;
-        if(shouldKeepForTopSection(dice,1,0)){
-            score = sumOfDiceS(dice,1);
+        if(isYahtzee(dice)){
+            score = 50;
         }
-       else if(shouldKeepForTopSection(dice,2,1)){
-            score = sumOfDiceS(dice,2);
-        }
-       else if(shouldKeepForTopSection(dice,3,2)){
-            score = sumOfDiceS(dice,3);
-        }
-       else if(shouldKeepForTopSection(dice, 4, 3)){
-           score = sumOfDiceS(dice,4);
-        }
-       else if(shouldKeepForTopSection(dice, 5,4)){
-           score = sumOfDiceS(dice,5);
-        }
-       else if(shouldKeepForTopSection(dice, 6, 5)){
-           score = sumOfDiceS(dice,6);
-        }
-       else if (isThreeOfAKind(dice)) {
+        else if (isThreeOfAKind(dice)) {
             score = sumOfDice(dice);
         }
-       else if(isFourOfAKind(dice)){
+        else if(isFourOfAKind(dice)){
             score = sumOfDice(dice);
         }
-       else if(isFullHouse(dice)){
-
+        else if(isFullHouse(dice)){
+            score = 25;
         }
-       else if(shouldKeepForStraight(dice)){
+        else if(shouldKeepForStraight(dice)){
             int ones = 0;
             int twos = 0;
             int threes = 0;
@@ -69,11 +54,32 @@ public class AI {
                 }
             }
             if(ones>=1&&twos>=1&&threes>=1&&fours>=1||twos>=1&&threes>=1&&fours>=1&&fives>=1||threes>=1&&fours>=1&&fives>=1&&sixes>=1){
-               score = 30;
+                score = 30;
             }
             else if(ones==1&&twos==1&&threes==1&&fours==1&&fives==1||twos==1&&threes==1&&fours==1&&fives==1&&sixes==1){
                 score = 40;
             }
+        }
+       else if(shouldKeepForTopSection(dice,1,0)){
+            score = sumOfDiceS(dice,1);
+        }
+       else if(shouldKeepForTopSection(dice,2,1)){
+            score = sumOfDiceS(dice,2);
+        }
+       else if(shouldKeepForTopSection(dice,3,2)){
+            score = sumOfDiceS(dice,3);
+        }
+       else if(shouldKeepForTopSection(dice, 4, 3)){
+           score = sumOfDiceS(dice,4);
+        }
+       else if(shouldKeepForTopSection(dice, 5,4)){
+           score = sumOfDiceS(dice,5);
+        }
+       else if(shouldKeepForTopSection(dice, 6, 5)){
+           score = sumOfDiceS(dice,6);
+        }
+        else if(scorePlayed[13]==false){
+            score = sumOfDice(dice);
         }
         return score;
     }
@@ -109,6 +115,21 @@ return true;
     }
     return false;
 }
+public static boolean isYahtzee(int[] dice){
+        for(int i = 1; i<=6;i++){
+            int count = 0;
+            for(int die : dice){
+                if(die == i){
+                    count++;
+                }
+            }
+            if(count==5){
+                return true;
+            }
+        }
+        return false;
+}
+
     // Checks if the dice have a "Three of a Kind" combination
     public static boolean isThreeOfAKind(int[] dice) {
         for (int i = 1; i <= 6; i++) {
