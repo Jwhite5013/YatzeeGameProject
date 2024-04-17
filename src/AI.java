@@ -220,21 +220,5 @@ public static boolean shouldKeepForStraight(int[] dice) {
     }
     return false;
 }
-public static boolean shouldKeepForYahztee(int[] d){
-        if(d[0]==d[1]&&d[1]==d[2]&&d[2]==d[3]&&d[4]==d[4]){
-            return true;
-        }
-        return false;
-}
-    // Utility method to convert dice array to a string for printing
-    public static String diceToString(int[] dice) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < dice.length; i++) {
-            sb.append(dice[i]);
-            if (i < dice.length - 1) {
-                sb.append(", ");
-            }
-        }
-        return sb.toString();
-    }
+
 }

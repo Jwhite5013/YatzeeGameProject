@@ -51,6 +51,7 @@ public class Main {
     static boolean yahtzeeBonusMax = false;
     static int yahtzeeCount = 0;
     static boolean chancePlayed = false;
+    static int numberOfPlayers = 0;
     public static void main(String[] args) {
 
         JFrame frame = new JFrame();
@@ -510,6 +511,8 @@ again.setVisible(false);
         computer1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                AI computerPlayer = new AI();
+                numberOfPlayers = 2;
                 dice1.setVisible(true);
                 dice5.setVisible(true);
                 dice4.setVisible(true);
@@ -539,6 +542,9 @@ again.setVisible(false);
         computer2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                AI computerPlayer1 = new AI();
+                AI computerPlayer2 = new AI();
+                numberOfPlayers = 3;
                 dice1.setVisible(true);
                 dice5.setVisible(true);
                 dice4.setVisible(true);
@@ -568,6 +574,10 @@ again.setVisible(false);
         computer3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                AI computerPlayer1 = new AI();
+                AI computerPlayer2 = new AI();
+                AI computerPlayer3 = new AI();
+                numberOfPlayers = 4;
                 dice1.setVisible(true);
                 dice5.setVisible(true);
                 dice4.setVisible(true);
@@ -597,6 +607,7 @@ again.setVisible(false);
         noComputer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                numberOfPlayers = 1;
                 dice1.setVisible(true);
                 dice5.setVisible(true);
                 dice4.setVisible(true);
