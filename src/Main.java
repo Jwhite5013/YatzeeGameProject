@@ -51,19 +51,18 @@ public class Main {
     static boolean yahtzeeBonusMax = false;
     static int yahtzeeCount = 0;
     static boolean chancePlayed = false;
-    static int numberOfPlayers = 0;
     public static void main(String[] args) {
 
         JFrame frame = new JFrame();
         frame.setSize(1000,800);
         JPanel panel = new JPanel();
         panel.setLayout(null);
-        JButton computer1 = new JButton("1 Computer");
-        JButton computer2 = new JButton("2 Computers");
-        JButton computer3 = new JButton("3 Computers");
-        JButton noComputer = new JButton("No Computers");
 
-        JLabel label = new JLabel("Welcome to Yahtzee! How many computers are you going to play against?");
+        JButton computer1 = new JButton("Start!");
+        computer1.setFont(new Font("Serif",Font.PLAIN,50));
+
+        JLabel label = new JLabel("Welcome to Yahtzee! Select start to play!");
+        label.setFont(new Font("Serif",Font.PLAIN,35));
         JButton roll = new JButton("Roll");
         JButton again = new JButton("Restart game");
         //Images set
@@ -224,13 +223,7 @@ public class Main {
         scoreCardFinal.setVisible(false);
         //computer start
         panel.add(computer1);
-        panel.add(computer2);
-        panel.add(computer3);
-        panel.add(noComputer);
-        noComputer.setBounds(751,500,250,100);
-        computer3.setBounds(501,500,250,100);
-        computer2.setBounds(251,500,250,100);
-        computer1.setBounds(0,500,250,100);
+        computer1.setBounds(0,500,1000,100);
 panel.add(scoreCard);
 panel.add(back);
 scoreCard.setBounds(700,100,250,50);
@@ -320,7 +313,7 @@ again.setVisible(false);
         score.setVisible(false);
         frame.setResizable(false);
 
-        label.setBounds(300,100,500,100);
+        label.setBounds(200,100,1000,100);
         roll.setBounds(0,frame.getHeight()-200,frame.getWidth(),150);
         frame.add(panel);
 
@@ -431,7 +424,7 @@ again.setVisible(false);
                     }
                     Main.countRolls++;
                 } else {
-                    label.setText("You ran out of Rolls. You must play this roll");
+                    label.setText("You must play this roll");
                 }
             }
         });
@@ -511,8 +504,6 @@ again.setVisible(false);
         computer1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AI computerPlayer = new AI();
-                numberOfPlayers = 2;
                 dice1.setVisible(true);
                 dice5.setVisible(true);
                 dice4.setVisible(true);
@@ -523,109 +514,12 @@ again.setVisible(false);
                 scoreCard.setVisible(true);
                 back.setVisible(true);
                 computer1.setVisible(false);
-                computer2.setVisible(false);
-                computer3.setVisible(false);
-                noComputer.setVisible(false);
                 dice1Label.setVisible(true);
                 dice2Label.setVisible(true);
                 dice3Label.setVisible(true);
                 dice4Label.setVisible(true);
                 dice5Label.setVisible(true);
-                label.setText("Your turn to roll");
-                dice5Label.setText("Saved die: No");
-                dice4Label.setText("Saved die: No");
-                dice3Label.setText("Saved die: No");
-                dice2Label.setText("Saved die: No");
-                dice1Label.setText("Saved die: No");
-            }
-        });
-        computer2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                AI computerPlayer1 = new AI();
-                AI computerPlayer2 = new AI();
-                numberOfPlayers = 3;
-                dice1.setVisible(true);
-                dice5.setVisible(true);
-                dice4.setVisible(true);
-                dice2.setVisible(true);
-                dice3.setVisible(true);
-                roll.setVisible(true);
-                score.setVisible(true);
-                scoreCard.setVisible(true);
-                back.setVisible(true);
-                computer1.setVisible(false);
-                computer2.setVisible(false);
-                computer3.setVisible(false);
-                noComputer.setVisible(false);
-                dice1Label.setVisible(true);
-                dice2Label.setVisible(true);
-                dice3Label.setVisible(true);
-                dice4Label.setVisible(true);
-                dice5Label.setVisible(true);
-                label.setText("Your turn to roll");
-                dice5Label.setText("Saved die: No");
-                dice4Label.setText("Saved die: No");
-                dice3Label.setText("Saved die: No");
-                dice2Label.setText("Saved die: No");
-                dice1Label.setText("Saved die: No");
-            }
-        });
-        computer3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                AI computerPlayer1 = new AI();
-                AI computerPlayer2 = new AI();
-                AI computerPlayer3 = new AI();
-                numberOfPlayers = 4;
-                dice1.setVisible(true);
-                dice5.setVisible(true);
-                dice4.setVisible(true);
-                dice2.setVisible(true);
-                dice3.setVisible(true);
-                roll.setVisible(true);
-                score.setVisible(true);
-                scoreCard.setVisible(true);
-                back.setVisible(true);
-                computer1.setVisible(false);
-                computer2.setVisible(false);
-                computer3.setVisible(false);
-                noComputer.setVisible(false);
-                dice1Label.setVisible(true);
-                dice2Label.setVisible(true);
-                dice3Label.setVisible(true);
-                dice4Label.setVisible(true);
-                dice5Label.setVisible(true);
-                label.setText("Your turn to roll");
-                dice5Label.setText("Saved die: No");
-                dice4Label.setText("Saved die: No");
-                dice3Label.setText("Saved die: No");
-                dice2Label.setText("Saved die: No");
-                dice1Label.setText("Saved die: No");
-            }
-        });
-        noComputer.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                numberOfPlayers = 1;
-                dice1.setVisible(true);
-                dice5.setVisible(true);
-                dice4.setVisible(true);
-                dice2.setVisible(true);
-                dice3.setVisible(true);
-                roll.setVisible(true);
-                score.setVisible(true);
-                scoreCard.setVisible(true);
-                back.setVisible(true);
-                computer1.setVisible(false);
-                computer2.setVisible(false);
-                computer3.setVisible(false);
-                noComputer.setVisible(false);
-                dice1Label.setVisible(true);
-                dice2Label.setVisible(true);
-                dice3Label.setVisible(true);
-                dice4Label.setVisible(true);
-                dice5Label.setVisible(true);
+                label.setBounds(300,100,1000,100);
                 label.setText("Your turn to roll");
                 dice5Label.setText("Saved die: No");
                 dice4Label.setText("Saved die: No");
@@ -823,6 +717,7 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&& fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -917,6 +812,7 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -1010,6 +906,7 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -1103,6 +1000,7 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -1196,6 +1094,7 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -1290,6 +1189,7 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -1460,6 +1360,7 @@ threeOfAKind.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+            label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -1630,6 +1531,7 @@ fourOfAKind.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+            label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -1800,6 +1702,7 @@ fullHouse.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
+            label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -1970,6 +1873,7 @@ smallStraight.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
+            label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -2140,6 +2044,7 @@ largeStraight.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
+            label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -2320,6 +2225,7 @@ yahtzee.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+            label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             ones.setVisible(false);
             twos.setVisible(false);
@@ -2393,6 +2299,7 @@ chance.addActionListener(new ActionListener() {
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            label.setBounds(200,200,1000,100);
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -2450,12 +2357,10 @@ again.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent e) {
         Main.resetGame();
         again.setVisible(false);
-        label.setText("Welcome to Yahtzee! Select a option");
+        label.setBounds(200,100,1000,100);
+        label.setText("Welcome to Yahtzee! Select start to play!");
         label.setVisible(true);
         computer1.setVisible(true);
-        computer2.setVisible(true);
-        computer3.setVisible(true);
-        noComputer.setVisible(true);
         scoreCard.setVisible(false);
         scoreCardOnes.setVisible(false);
         scoreCardTwos.setVisible(false);
