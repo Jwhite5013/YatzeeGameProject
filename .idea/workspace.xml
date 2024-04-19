@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="Finished The AI Score">
+    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="Done">
+      <change afterPath="$PROJECT_DIR$/Images/Blank.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Four.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/Blank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/Dice2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/Die4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/Three.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/dice1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/images.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/side_5_pips.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +62,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Images" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -249,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713370960173</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Done">
+      <option name="closed" value="true" />
+      <created>1713457723216</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1713457723216</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +289,7 @@
     <MESSAGE value="Started Ai and finished a little" />
     <MESSAGE value="Finished The Scoring" />
     <MESSAGE value="Finished The AI Score" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished The AI Score" />
+    <MESSAGE value="Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done" />
   </component>
 </project>
