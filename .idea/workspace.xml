@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="Done">
-      <change afterPath="$PROJECT_DIR$/Images/Blank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/Four.png" afterDir="false" />
+    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="ADDED NEW THINGS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/Blank.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/Dice2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/Die4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/Three.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/dice1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/images.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Images copy 2/side_5_pips.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/Blank.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Blank.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713457723216</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="ADDED NEW THINGS">
+      <option name="closed" value="true" />
+      <created>1713544385883</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1713544385883</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,6 +290,7 @@
     <MESSAGE value="Finished The Scoring" />
     <MESSAGE value="Finished The AI Score" />
     <MESSAGE value="Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done" />
+    <MESSAGE value="ADDED NEW THINGS" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADDED NEW THINGS" />
   </component>
 </project>
