@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="ADDED NEW THINGS">
+    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="Finished">
+      <change afterPath="$PROJECT_DIR$/high" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/Blank.png" beforeDir="false" afterPath="$PROJECT_DIR$/Images/Blank.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +266,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713544385883</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Finished">
+      <option name="closed" value="true" />
+      <created>1713803223424</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1713803223424</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Finished">
+      <option name="closed" value="true" />
+      <created>1713803229166</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1713803229166</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +307,7 @@
     <MESSAGE value="Finished The AI Score" />
     <MESSAGE value="Done" />
     <MESSAGE value="ADDED NEW THINGS" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADDED NEW THINGS" />
+    <MESSAGE value="Finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished" />
   </component>
 </project>

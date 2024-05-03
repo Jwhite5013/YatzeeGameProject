@@ -2,10 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.File;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
+    static int topsScore = 0;
     static boolean scoreCardPress = false;
     static boolean scoreRollPress = false;
     static int finalScore = 0;
@@ -60,6 +64,7 @@ public class Main {
 
         JButton computer1 = new JButton("Start!");
         computer1.setFont(new Font("Serif",Font.PLAIN,50));
+        JLabel finalLabel = new JLabel();
 
         JLabel label = new JLabel("Welcome to Yahtzee! Select start to play!");
         label.setFont(new Font("Serif",Font.PLAIN,35));
@@ -377,104 +382,106 @@ again.setVisible(false);
                     int dieRoll3 = (int) (Math.random() * 6) + 1;
                     int dieRoll4 = (int) (Math.random() * 6) + 1;
                     int dieRoll5 = (int) (Math.random() * 6) + 1;
-                    if (dieRoll1 == 1 && saveDie1 == false) {
+                    if (dieRoll1 == 1 && !saveDie1) {
                         dice1.setIcon(die1);
                         Main.saveDie1Num = dieRoll1;
-                    } else if (dieRoll1 == 2 & saveDie1 == false) {
+                    } else if (dieRoll1 == 2 && !saveDie1) {
                         dice1.setIcon(die2);
                         Main.saveDie1Num = dieRoll1;
-                    } else if (dieRoll1 == 3 & saveDie1 == false) {
+                    } else if (dieRoll1 == 3 && !saveDie1) {
                         dice1.setIcon(die3);
                         Main.saveDie1Num = dieRoll1;
-                    } else if (dieRoll1 == 4 & saveDie1 == false) {
+                    } else if (dieRoll1 == 4 && !saveDie1) {
                         dice1.setIcon(die4);
                         Main.saveDie1Num = dieRoll1;
-                    } else if (dieRoll1 == 5 & saveDie1 == false) {
+                    } else if (dieRoll1 == 5 && !saveDie1) {
                         dice1.setIcon(die5);
                         Main.saveDie1Num = dieRoll1;
-                    } else if (dieRoll1 == 6 & saveDie1 == false) {
+                    } else if (dieRoll1 == 6 && !saveDie1) {
                         dice1.setIcon(die6);
                         Main.saveDie1Num = dieRoll1;
                     }
-                    if (dieRoll2 == 1 && saveDie2 == false) {
+                    if (dieRoll2 == 1 && !saveDie2) {
                         dice2.setIcon(die1);
                         Main.saveDie2Num = dieRoll2;
-                    } else if (dieRoll2 == 2 && saveDie2 == false) {
+                    } else if (dieRoll2 == 2 && !saveDie2) {
                         dice2.setIcon(die2);
                         Main.saveDie2Num = dieRoll2;
-                    } else if (dieRoll2 == 3 && saveDie2 == false) {
+                    } else if (dieRoll2 == 3 && !saveDie2) {
                         dice2.setIcon(die3);
                         Main.saveDie2Num = dieRoll2;
-                    } else if (dieRoll2 == 4 && saveDie2 == false) {
+                    } else if (dieRoll2 == 4 && !saveDie2) {
                         dice2.setIcon(die4);
                         Main.saveDie2Num = dieRoll2;
-                    } else if (dieRoll2 == 5 && saveDie2 == false) {
+                    } else if (dieRoll2 == 5 && !saveDie2) {
                         dice2.setIcon(die5);
                         Main.saveDie2Num = dieRoll2;
-                    } else if (dieRoll2 == 6 && saveDie2 == false) {
+                    } else if (dieRoll2 == 6 && !saveDie2) {
                         dice2.setIcon(die6);
                         Main.saveDie2Num = dieRoll2;
                     }
-                    if (dieRoll3 == 1 && saveDie3 == false) {
+                    if (dieRoll3 == 1 && !saveDie3) {
                         dice3.setIcon(die1);
                         Main.saveDie3Num = dieRoll3;
-                    } else if (dieRoll3 == 2 && saveDie3 == false) {
+                    } else if (dieRoll3 == 2 && !saveDie3) {
                         dice3.setIcon(die2);
                         Main.saveDie3Num = dieRoll3;
-                    } else if (dieRoll3 == 3 && saveDie3 == false) {
+                    } else if (dieRoll3 == 3 && !saveDie3) {
                         dice3.setIcon(die3);
                         Main.saveDie3Num = dieRoll3;
-                    } else if (dieRoll3 == 4 && saveDie3 == false) {
+                    } else if (dieRoll3 == 4 && !saveDie3) {
                         dice3.setIcon(die4);
                         Main.saveDie3Num = dieRoll3;
-                    } else if (dieRoll3 == 5 && saveDie3 == false) {
+                    } else if (dieRoll3 == 5 && !saveDie3) {
                         dice3.setIcon(die5);
                         Main.saveDie3Num = dieRoll3;
-                    } else if (dieRoll3 == 6 && saveDie3 == false) {
+                    } else if (dieRoll3 == 6 && !saveDie3) {
                         dice3.setIcon(die6);
                         Main.saveDie3Num = dieRoll3;
                     }
-                    if (dieRoll4 == 1 && saveDie4 == false) {
+                    if (dieRoll4 == 1 && !saveDie4) {
                         dice4.setIcon(die1);
                         Main.saveDie4Num = dieRoll4;
-                    } else if (dieRoll4 == 2 && saveDie4 == false) {
+                    } else if (dieRoll4 == 2 && !saveDie4) {
                         dice4.setIcon(die2);
                         Main.saveDie4Num = dieRoll4;
-                    } else if (dieRoll4 == 3 && saveDie4 == false) {
+                    } else if (dieRoll4 == 3 && !saveDie4) {
                         dice4.setIcon(die3);
                         Main.saveDie4Num = dieRoll4;
-                    } else if (dieRoll4 == 4 && saveDie4 == false) {
+                    } else if (dieRoll4 == 4 && !saveDie4) {
                         dice4.setIcon(die4);
                         Main.saveDie4Num = dieRoll4;
-                    } else if (dieRoll4 == 5 && saveDie4 == false) {
+                    } else if (dieRoll4 == 5 && !saveDie4) {
                         dice4.setIcon(die5);
                         Main.saveDie4Num = dieRoll4;
-                    } else if (dieRoll4 == 6 && saveDie4 == false) {
+                    } else if (dieRoll4 == 6 && !saveDie4) {
                         dice4.setIcon(die6);
                         Main.saveDie4Num = dieRoll4;
                     }
-                    if (dieRoll5 == 1 && saveDie5 == false) {
+                    if (dieRoll5 == 1 && !saveDie5) {
                         dice5.setIcon(die1);
                         Main.saveDie5Num = dieRoll5;
-                    } else if (dieRoll5 == 2 && saveDie5 == false) {
+                    } else if (dieRoll5 == 2 && !saveDie5) {
                         dice5.setIcon(die2);
                         Main.saveDie5Num = dieRoll5;
-                    } else if (dieRoll5 == 3 && saveDie5 == false) {
+                    } else if (dieRoll5 == 3 && !saveDie5) {
                         dice5.setIcon(die3);
                         Main.saveDie5Num = dieRoll5;
-                    } else if (dieRoll5 == 4 && saveDie5 == false) {
+                    } else if (dieRoll5 == 4 && !saveDie5) {
                         dice5.setIcon(die4);
                         Main.saveDie5Num = dieRoll5;
-                    } else if (dieRoll5 == 5 && saveDie5 == false) {
+                    } else if (dieRoll5 == 5 && !saveDie5) {
                         dice5.setIcon(die5);
                         Main.saveDie5Num = dieRoll5;
-                    } else if (dieRoll5 == 6 && saveDie5 == false) {
+                    } else if (dieRoll5 == 6 && !saveDie5) {
                         dice5.setIcon(die6);
                         Main.saveDie5Num = dieRoll5;
                     }
                     Main.countRolls++;
                 } else {
                     label.setText("You must play this roll");
+                    roll.setVisible(false);
+
                 }
             }
         });
@@ -570,7 +577,7 @@ again.setVisible(false);
                 dice4Label.setVisible(true);
                 dice5Label.setVisible(true);
                 label.setBounds(300,100,1000,100);
-                label.setText("Your turn to roll");
+                label.setText("Time to Roll the dice");
                 dice5Label.setText("Saved die: No");
                 dice4Label.setText("Saved die: No");
                 dice3Label.setText("Saved die: No");
@@ -794,6 +801,9 @@ again.setVisible(false);
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&& fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setBounds(200,200,1000,100);
+                    if(topsScore<=finalScore){
+                        topsScore=finalScore;
+                    }
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
                     ones.setVisible(false);
                     twos.setVisible(false);
@@ -904,6 +914,7 @@ again.setVisible(false);
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+                    finalLabel.setText("The High Score is " + endGame());
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
@@ -1012,6 +1023,7 @@ again.setVisible(false);
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+                    finalLabel.setText("The High Score is " + endGame());
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
@@ -1120,6 +1132,7 @@ again.setVisible(false);
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+                    finalLabel.setText("The High Score is " + endGame());
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
@@ -1228,6 +1241,7 @@ again.setVisible(false);
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+                    finalLabel.setText("The High Score is " + endGame());
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
@@ -1337,6 +1351,7 @@ again.setVisible(false);
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
                     label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+                    finalLabel.setText("The High Score is " + endGame());
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
@@ -1522,6 +1537,7 @@ threeOfAKind.addActionListener(new ActionListener() {
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            finalLabel.setText("The High Score is " + endGame());
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -1707,6 +1723,7 @@ fourOfAKind.addActionListener(new ActionListener() {
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            finalLabel.setText("The High Score is " + endGame());
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -1892,6 +1909,7 @@ fullHouse.addActionListener(new ActionListener() {
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            finalLabel.setText("The High Score is " + endGame());
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -2077,6 +2095,7 @@ smallStraight.addActionListener(new ActionListener() {
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            finalLabel.setText("The High Score is " + endGame());
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -2262,6 +2281,7 @@ largeStraight.addActionListener(new ActionListener() {
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            finalLabel.setText("The High Score is " + endGame());
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -2457,6 +2477,7 @@ yahtzee.addActionListener(new ActionListener() {
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            finalLabel.setText("The High Score is " + endGame());
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -2543,6 +2564,7 @@ chance.addActionListener(new ActionListener() {
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+            finalLabel.setText("The High Score is " + endGame());
             label.setBounds(200,200,1000,100);
             ones.setVisible(false);
             twos.setVisible(false);
@@ -2638,6 +2660,7 @@ again.addActionListener(new ActionListener() {
         scoreCardChance.setVisible(false);
         scoreCardBottom.setVisible(false);
         scoreCardFinal.setVisible(false);
+        finalLabel.setVisible(false);
         usedCat1.setText("Ones: Not Used");
         usedCat2.setText("Twos: Not Used");
         usedCat3.setText("Threes: Not Used");
@@ -2745,7 +2768,6 @@ back.addActionListener(new ActionListener() {
             usedCatLS.setVisible(true);
             usedCatY.setVisible(true);
             usedCatC.setVisible(true);
-            roll.setVisible(true);
             score.setVisible(true);
             ones.setVisible(false);
             twos.setVisible(false);
@@ -2762,6 +2784,9 @@ back.addActionListener(new ActionListener() {
             yahtzee.setVisible(false);
             scoreCard.setVisible(true);
             Main.scoreRollPress = false;
+            if(countRolls<=2){
+                roll.setVisible(true);
+            }
         }else if(scoreCardPress){
             usedCat1.setVisible(true);
             usedCat2.setVisible(true);
@@ -2781,7 +2806,6 @@ back.addActionListener(new ActionListener() {
             dice3.setVisible(true);
             dice4.setVisible(true);
             dice5.setVisible(true);
-            roll.setVisible(true);
             score.setVisible(true);
             label.setVisible(true);
             dice5Label.setVisible(true);
@@ -2808,12 +2832,35 @@ back.addActionListener(new ActionListener() {
             scoreCardBottom.setVisible(false);
             scoreCardFinal.setVisible(false);
             scoreCard.setVisible(true);
+            if(countRolls<=2){
+                roll.setVisible(true);
+            }
             Main.scoreCardPress = false;
         }else{
             label.setText("There is nothing to go back to");
         }
     }
 });
+    }
+    public static int endGame(){
+       int highScore = 0;
+        try {
+            FileReader read = new FileReader(new File("high"));
+            int red = read.read();
+            read.close();
+            if(red<finalScore){
+                FileWriter write = new FileWriter(new File("high"));
+                write.write(finalScore);
+                write.close();
+                highScore=finalScore;
+            }else{
+                highScore=finalScore;
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        return highScore;
     }
     public static void resetGame(){
         Main.onesScore = 0;
