@@ -56,7 +56,17 @@ public class Main {
     static int yahtzeeCount = 0;
     static boolean chancePlayed = false;
     public static void main(String[] args) {
+        try {
+            FileReader input = new FileReader(new File("high"));
 
+            // Reads characters
+            topsScore = input.read();
+            // Closes the reader
+            input.close();
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
         JFrame frame = new JFrame();
         frame.setSize(1000,800);
         JPanel panel = new JPanel();
@@ -64,7 +74,7 @@ public class Main {
 
         JButton computer1 = new JButton("Start!");
         computer1.setFont(new Font("Serif",Font.PLAIN,50));
-        JLabel finalLabel = new JLabel();
+JLabel finalLabel = new JLabel("");
 
         JLabel label = new JLabel("Welcome to Yahtzee! Select start to play!");
         label.setFont(new Font("Serif",Font.PLAIN,35));
@@ -369,6 +379,10 @@ again.setVisible(false);
         panel.add(usedCatY);
         usedCatY.setBounds(375,650,200,100);
         usedCatY.setVisible(false);
+        panel.add(finalLabel);
+        finalLabel.setBounds(200,400,1000,100);
+        finalLabel.setFont(new Font("Serif",Font.PLAIN,30));
+        finalLabel.setVisible(false);
         panel.add(usedCatC);
         usedCatC.setBounds(550,650,150,100);
         usedCatC.setVisible(false);
@@ -800,11 +814,22 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&& fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    resetDice();
                     label.setBounds(200,200,1000,100);
-                    if(topsScore<=finalScore){
+                    label.setText("GAME OVER! \nYour Final score is:" + finalScore + " points!");
+                    if(topsScore<finalScore){
                         topsScore=finalScore;
+                        try{
+                            FileWriter file = new FileWriter(new File("high"));
+                            file.write(topsScore);
+                            file.close();
+                        }
+                        catch(Exception w){
+                            System.out.println(w);
+                        }
                     }
-                    label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
+                    finalLabel.setText("The high score is: " + topsScore + " points");
+                    finalLabel.setVisible(true);
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
@@ -832,6 +857,7 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    resetDice();
                     usedCat1.setText("Ones: Used");
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -912,9 +938,22 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    resetDice();
                     label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-                    finalLabel.setText("The High Score is " + endGame());
+                    if(topsScore<finalScore){
+                        topsScore=finalScore;
+                        try{
+                            FileWriter file = new FileWriter(new File("high"));
+                            file.write(topsScore);
+                            file.close();
+                        }
+                        catch(Exception w){
+                            System.out.println(w);
+                        }
+                    }
+                    finalLabel.setText("The high score is: " + topsScore + " points");
+                    finalLabel.setVisible(true);
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
@@ -942,6 +981,7 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    resetDice();
                     usedCat2.setText("Twos: Used");
                     roll.setVisible(true);
                     score.setVisible(true);
@@ -1021,9 +1061,22 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    resetDice();
                     label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-                    finalLabel.setText("The High Score is " + endGame());
+                    if(topsScore<finalScore){
+                        topsScore=finalScore;
+                        try{
+                            FileWriter file = new FileWriter(new File("high"));
+                            file.write(topsScore);
+                            file.close();
+                        }
+                        catch(Exception w){
+                            System.out.println(w);
+                        }
+                    }
+                    finalLabel.setText("The high score is: " + topsScore + " points");
+                    finalLabel.setVisible(true);
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
@@ -1051,6 +1104,7 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    resetDice();
                     usedCat3.setText("Threes: Used");
                     usedCat1.setVisible(true);
                     usedCat2.setVisible(true);
@@ -1130,9 +1184,22 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    resetDice();
                     label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-                    finalLabel.setText("The High Score is " + endGame());
+                    if(topsScore<finalScore){
+                        topsScore=finalScore;
+                        try{
+                            FileWriter file = new FileWriter(new File("high"));
+                            file.write(topsScore);
+                            file.close();
+                        }
+                        catch(Exception w){
+                            System.out.println(w);
+                        }
+                    }
+                    finalLabel.setText("The high score is: " + topsScore + " points");
+                    finalLabel.setVisible(true);
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
@@ -1160,6 +1227,7 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    resetDice();
                     usedCat4.setText("Fours: Used");
                     usedCat1.setVisible(true);
                     usedCat2.setVisible(true);
@@ -1239,9 +1307,22 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    resetDice();
                     label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-                    finalLabel.setText("The High Score is " + endGame());
+                    if(topsScore<finalScore){
+                        topsScore=finalScore;
+                        try{
+                            FileWriter file = new FileWriter(new File("high"));
+                            file.write(topsScore);
+                            file.close();
+                        }
+                        catch(Exception w){
+                            System.out.println(w);
+                        }
+                    }
+                    finalLabel.setText("The high score is: " + topsScore + " points");
+                    finalLabel.setVisible(true);
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
@@ -1269,6 +1350,7 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    resetDice();
                     usedCat5.setText("Fives: Used");
                     usedCat1.setVisible(true);
                     usedCat2.setVisible(true);
@@ -1349,9 +1431,22 @@ again.setVisible(false);
                     }
                 }
                 if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+                    resetDice();
                     label.setBounds(200,200,1000,100);
                     label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-                    finalLabel.setText("The High Score is " + endGame());
+                    if(topsScore<finalScore){
+                        topsScore=finalScore;
+                        try{
+                            FileWriter file = new FileWriter(new File("high"));
+                            file.write(topsScore);
+                            file.close();
+                        }
+                        catch(Exception w){
+                            System.out.println(w);
+                        }
+                    }
+                    finalLabel.setText("The high score is: " + topsScore + " points");
+                    finalLabel.setVisible(true);
                     ones.setVisible(false);
                     twos.setVisible(false);
                     threes.setVisible(false);
@@ -1379,6 +1474,7 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    resetDice();
                     usedCat6.setText("Sixes: Used");
                     usedCat1.setVisible(true);
                     usedCat2.setVisible(true);
@@ -1535,9 +1631,22 @@ threeOfAKind.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+            resetDice();
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-            finalLabel.setText("The High Score is " + endGame());
+            if(topsScore<finalScore){
+                topsScore=finalScore;
+                try{
+                    FileWriter file = new FileWriter(new File("high"));
+                    file.write(topsScore);
+                    file.close();
+                }
+                catch(Exception w){
+                    System.out.println(w);
+                }
+            }
+            finalLabel.setText("The high score is: " + topsScore + " points");
+            finalLabel.setVisible(true);
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -1565,6 +1674,7 @@ threeOfAKind.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            resetDice();
             usedCatTK.setText("Three of a Kind: Used");
             usedCat1.setVisible(true);
             usedCat2.setVisible(true);
@@ -1721,9 +1831,22 @@ fourOfAKind.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+            resetDice();
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-            finalLabel.setText("The High Score is " + endGame());
+            if(topsScore<finalScore){
+                topsScore=finalScore;
+                try{
+                    FileWriter file = new FileWriter(new File("high"));
+                    file.write(topsScore);
+                    file.close();
+                }
+                catch(Exception w){
+                    System.out.println(w);
+                }
+            }
+            finalLabel.setText("The high score is: " + topsScore + " points");
+            finalLabel.setVisible(true);
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -1751,6 +1874,7 @@ fourOfAKind.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            resetDice();
             usedCatFK.setText("Four of a Kind: Used");
             usedCat1.setVisible(true);
             usedCat2.setVisible(true);
@@ -1907,9 +2031,22 @@ fullHouse.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
+            resetDice();
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-            finalLabel.setText("The High Score is " + endGame());
+            if(topsScore<finalScore){
+                topsScore=finalScore;
+                try{
+                    FileWriter file = new FileWriter(new File("high"));
+                    file.write(topsScore);
+                    file.close();
+                }
+                catch(Exception w){
+                    System.out.println(w);
+                }
+            }
+            finalLabel.setText("The high score is: " + topsScore + " points");
+            finalLabel.setVisible(true);
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -1937,6 +2074,7 @@ fullHouse.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            resetDice();
             usedCatFH.setText("Full House: Used");
             usedCat1.setVisible(true);
             usedCat2.setVisible(true);
@@ -2093,9 +2231,22 @@ smallStraight.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
+            resetDice();
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-            finalLabel.setText("The High Score is " + endGame());
+            if(topsScore<finalScore){
+                topsScore=finalScore;
+                try{
+                    FileWriter file = new FileWriter(new File("high"));
+                    file.write(topsScore);
+                    file.close();
+                }
+                catch(Exception w){
+                    System.out.println(w);
+                }
+            }
+            finalLabel.setText("The high score is: " + topsScore + " points");
+            finalLabel.setVisible(true);
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -2123,6 +2274,7 @@ smallStraight.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            resetDice();
             usedCatSS.setText("Small Straight: Used");
             usedCat1.setVisible(true);
             usedCat2.setVisible(true);
@@ -2279,9 +2431,22 @@ largeStraight.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed){
+            resetDice();
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-            finalLabel.setText("The High Score is " + endGame());
+            if(topsScore<finalScore){
+                topsScore=finalScore;
+                try{
+                    FileWriter file = new FileWriter(new File("high"));
+                    file.write(topsScore);
+                    file.close();
+                }
+                catch(Exception w){
+                    System.out.println(w);
+                }
+            }
+            finalLabel.setText("The high score is: " + topsScore + " points");
+            finalLabel.setVisible(true);
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -2309,6 +2474,7 @@ largeStraight.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            resetDice();
             usedCatLS.setText("Large Straight: Used");
             usedCat1.setVisible(true);
             usedCat2.setVisible(true);
@@ -2475,9 +2641,22 @@ yahtzee.addActionListener(new ActionListener() {
         dice5.setIcon(blank);
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
+            resetDice();
             label.setBounds(200,200,1000,100);
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-            finalLabel.setText("The High Score is " + endGame());
+            if(topsScore<finalScore){
+                topsScore=finalScore;
+                try{
+                    FileWriter file = new FileWriter(new File("high"));
+                    file.write(topsScore);
+                    file.close();
+                }
+                catch(Exception w){
+                    System.out.println(w);
+                }
+            }
+            finalLabel.setText("The high score is: " + topsScore + " points");
+            finalLabel.setVisible(true);
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -2505,6 +2684,7 @@ yahtzee.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            resetDice();
             usedCatY.setText("Yahtzee: Used");
             usedCat1.setVisible(true);
             usedCat2.setVisible(true);
@@ -2564,8 +2744,8 @@ chance.addActionListener(new ActionListener() {
         Main.saveDie5= false;
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
-            finalLabel.setText("The High Score is " + endGame());
             label.setBounds(200,200,1000,100);
+            resetDice();
             ones.setVisible(false);
             twos.setVisible(false);
             threes.setVisible(false);
@@ -2594,6 +2774,7 @@ chance.addActionListener(new ActionListener() {
             dice5Label.setVisible(false);
         } else {
             usedCatC.setText("Chance: Used");
+            resetDice();
             usedCat1.setVisible(true);
             usedCat2.setVisible(true);
             usedCat3.setVisible(true);
@@ -2635,11 +2816,12 @@ chance.addActionListener(new ActionListener() {
 again.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
-        Main.resetGame();
+        resetGame();
         again.setVisible(false);
         label.setBounds(200,100,1000,100);
         label.setText("Welcome to Yahtzee! Select start to play!");
         label.setVisible(true);
+        finalLabel.setVisible(false);
         computer1.setVisible(true);
         scoreCard.setVisible(false);
         scoreCardOnes.setVisible(false);
@@ -2660,7 +2842,6 @@ again.addActionListener(new ActionListener() {
         scoreCardChance.setVisible(false);
         scoreCardBottom.setVisible(false);
         scoreCardFinal.setVisible(false);
-        finalLabel.setVisible(false);
         usedCat1.setText("Ones: Not Used");
         usedCat2.setText("Twos: Not Used");
         usedCat3.setText("Threes: Not Used");
@@ -2679,6 +2860,7 @@ again.addActionListener(new ActionListener() {
 scoreCard.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
+       finalLabel.setVisible(false);
         usedCat1.setVisible(false);
         usedCat2.setVisible(false);
         usedCat3.setVisible(false);
@@ -2842,26 +3024,13 @@ back.addActionListener(new ActionListener() {
     }
 });
     }
-    public static int endGame(){
-       int highScore = 0;
-        try {
-            FileReader read = new FileReader(new File("high"));
-            int red = read.read();
-            read.close();
-            if(red<finalScore){
-                FileWriter write = new FileWriter(new File("high"));
-                write.write(finalScore);
-                write.close();
-                highScore=finalScore;
-            }else{
-                highScore=finalScore;
-            }
-        }
-        catch(Exception e){
-            System.out.println(e);
-        }
-        return highScore;
-    }
+public static void resetDice(){
+        Main.saveDie1Num = 0;
+        Main.saveDie2Num = 0;
+        Main.saveDie3Num = 0;
+        Main.saveDie4Num = 0;
+        Main.saveDie5Num = 0;
+}
     public static void resetGame(){
         Main.onesScore = 0;
         Main.twosScore = 0;
