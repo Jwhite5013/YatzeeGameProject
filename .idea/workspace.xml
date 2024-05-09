@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="none">
+    <list default="true" id="5f8ae921-87c6-411e-a9f2-2034c60b5005" name="Changes" comment="added on personal computer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +70,8 @@
       <option name="presentableId" value="Default" />
       <updated>1706635007205</updated>
       <workItem from="1708125755670" duration="8487000" />
+      <workItem from="1710173278256" duration="653000" />
+      <workItem from="1712271456282" duration="175000" />
     </task>
     <task id="LOCAL-00001" summary="Start of Yatzee Project">
       <option name="closed" value="true" />
@@ -192,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709055173695</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added on personal computer">
+      <option name="closed" value="true" />
+      <created>1710173536426</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1710173536426</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +220,7 @@
     <MESSAGE value="Whoops code" />
     <MESSAGE value="Added Three of a kind" />
     <MESSAGE value="Added Play again" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Play again" />
+    <MESSAGE value="added on personal computer" />
+    <option name="LAST_COMMIT_MESSAGE" value="added on personal computer" />
   </component>
 </project>
