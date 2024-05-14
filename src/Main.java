@@ -75,7 +75,7 @@ public class Main {
         JButton computer1 = new JButton("Start!");
         computer1.setFont(new Font("Serif",Font.PLAIN,50));
 JLabel finalLabel = new JLabel("");
-
+JLabel numRollsLabel = new JLabel("Roll: " + countRolls);
         JLabel label = new JLabel("Welcome to Yahtzee! Select start to play!");
         label.setFont(new Font("Serif",Font.PLAIN,35));
         JButton roll = new JButton("Roll");
@@ -338,7 +338,10 @@ again.setVisible(false);
         roll.setVisible(false);
         score.setVisible(false);
         frame.setResizable(false);
-
+        panel.add(numRollsLabel);
+numRollsLabel.setFont(new Font("Serif",Font.PLAIN,30));
+numRollsLabel.setBounds(250,50,100,100);
+numRollsLabel.setVisible(false);
         label.setBounds(200,100,1000,100);
         roll.setBounds(250,500,500,50);
         frame.add(panel);
@@ -391,6 +394,7 @@ again.setVisible(false);
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (countRolls <= 2) {
+                    label.setText("Rolled");
                     int dieRoll1 = (int) (Math.random() * 6) + 1;
                     int dieRoll2 = (int) (Math.random() * 6) + 1;
                     int dieRoll3 = (int) (Math.random() * 6) + 1;
@@ -492,6 +496,7 @@ again.setVisible(false);
                         Main.saveDie5Num = dieRoll5;
                     }
                     Main.countRolls++;
+                    numRollsLabel.setText("Rolls: " + Main.countRolls);
                 } else {
                     label.setText("You must play this roll");
                     roll.setVisible(false);
@@ -590,6 +595,7 @@ again.setVisible(false);
                 dice3Label.setVisible(true);
                 dice4Label.setVisible(true);
                 dice5Label.setVisible(true);
+                numRollsLabel.setText("Rolls: " + Main.countRolls);
                 label.setBounds(300,100,1000,100);
                 label.setText("Time to Roll the dice");
                 dice5Label.setText("Saved die: No");
@@ -610,11 +616,13 @@ again.setVisible(false);
                 usedCatLS.setVisible(true);
                 usedCatY.setVisible(true);
                 usedCatC.setVisible(true);
+                numRollsLabel.setVisible(true);
             }
         });
         score.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                numRollsLabel.setVisible(false);
                 Main.scoreRollPress = true;
                 label.setText("What would you like to play");
                 roll.setVisible(false);
@@ -828,6 +836,7 @@ again.setVisible(false);
                             System.out.println(w);
                         }
                     }
+                    numRollsLabel.setText("Rolls: " + Main.countRolls);
                     finalLabel.setText("The high score is: " + topsScore + " points");
                     finalLabel.setVisible(true);
                     ones.setVisible(false);
@@ -857,6 +866,8 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    numRollsLabel.setText("Rolls: " + Main.countRolls);
+                    numRollsLabel.setVisible(true);
                     resetDice();
                     usedCat1.setText("Ones: Used");
                     roll.setVisible(true);
@@ -981,6 +992,8 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    numRollsLabel.setText("Rolls: " + Main.countRolls);
+                    numRollsLabel.setVisible(true);
                     resetDice();
                     usedCat2.setText("Twos: Used");
                     roll.setVisible(true);
@@ -1104,6 +1117,8 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    numRollsLabel.setText("Rolls: " + Main.countRolls);
+                    numRollsLabel.setVisible(true);
                     resetDice();
                     usedCat3.setText("Threes: Used");
                     usedCat1.setVisible(true);
@@ -1227,6 +1242,8 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    numRollsLabel.setText("Rolls: " + Main.countRolls);
+                    numRollsLabel.setVisible(true);
                     resetDice();
                     usedCat4.setText("Fours: Used");
                     usedCat1.setVisible(true);
@@ -1350,6 +1367,8 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    numRollsLabel.setText("Rolls: " + Main.countRolls);
+                    numRollsLabel.setVisible(true);
                     resetDice();
                     usedCat5.setText("Fives: Used");
                     usedCat1.setVisible(true);
@@ -1474,6 +1493,8 @@ again.setVisible(false);
                     dice4Label.setVisible(false);
                     dice5Label.setVisible(false);
                 } else {
+                    numRollsLabel.setText("Rolls: " + Main.countRolls);
+                    numRollsLabel.setVisible(true);
                     resetDice();
                     usedCat6.setText("Sixes: Used");
                     usedCat1.setVisible(true);
@@ -1674,6 +1695,8 @@ threeOfAKind.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            numRollsLabel.setText("Rolls: " + Main.countRolls);
+            numRollsLabel.setVisible(true);
             resetDice();
             usedCatTK.setText("Three of a Kind: Used");
             usedCat1.setVisible(true);
@@ -1874,6 +1897,8 @@ fourOfAKind.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            numRollsLabel.setText("Rolls: " + Main.countRolls);
+            numRollsLabel.setVisible(true);
             resetDice();
             usedCatFK.setText("Four of a Kind: Used");
             usedCat1.setVisible(true);
@@ -2074,6 +2099,8 @@ fullHouse.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            numRollsLabel.setText("Rolls: " + Main.countRolls);
+            numRollsLabel.setVisible(true);
             resetDice();
             usedCatFH.setText("Full House: Used");
             usedCat1.setVisible(true);
@@ -2274,6 +2301,8 @@ smallStraight.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            numRollsLabel.setText("Rolls: " + Main.countRolls);
+            numRollsLabel.setVisible(true);
             resetDice();
             usedCatSS.setText("Small Straight: Used");
             usedCat1.setVisible(true);
@@ -2474,6 +2503,8 @@ largeStraight.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            numRollsLabel.setText("Rolls: " + Main.countRolls);
+            numRollsLabel.setVisible(true);
             resetDice();
             usedCatLS.setText("Large Straight: Used");
             usedCat1.setVisible(true);
@@ -2618,11 +2649,13 @@ yahtzee.addActionListener(new ActionListener() {
         if(yahtzeeCount==0) {
             Main.yahtzeeScore = 50;
             Main.finalScore += 50;
+            Main.bottomScore +=50;
             Main.yahtzeeCount++;
             Main.yahtzeePlayed=true;
         }else{
             Main.yahtzeeBonusScore+=100;
             Main.finalScore+=100;
+            Main.bottomScore+=100;
             Main.yahtzeeCount++;
         }
     }if(onesCount<=4&&twosCount<=4&&threesCount<=4&&foursCount<=4&&fivesCount<=4&&sixesCount<=4){
@@ -2684,6 +2717,8 @@ yahtzee.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            numRollsLabel.setText("Rolls: " + Main.countRolls);
+            numRollsLabel.setVisible(true);
             resetDice();
             usedCatY.setText("Yahtzee: Used");
             usedCat1.setVisible(true);
@@ -2745,6 +2780,19 @@ chance.addActionListener(new ActionListener() {
         if (onesPlayed && twosPlayed && threesPlayed && foursPlayed && fivesPlayed && sixesPlayed && threeOfAKindPlayed&&fourOfAKindPlayed&&fullHousePlayed&&smallStraightPlayed&&largeStraightPlayed&&yahtzeePlayed&&chancePlayed) {
             label.setText("GAME OVER!\nYour Final score is: " + finalScore + " points!");
             label.setBounds(200,200,1000,100);
+            if(topsScore<finalScore){
+                topsScore=finalScore;
+                try{
+                    FileWriter file = new FileWriter(new File("high"));
+                    file.write(topsScore);
+                    file.close();
+                }
+                catch(Exception w){
+                    System.out.println(w);
+                }
+            }
+            finalLabel.setText("The high score is: " + topsScore + " points");
+            finalLabel.setVisible(true);
             resetDice();
             ones.setVisible(false);
             twos.setVisible(false);
@@ -2773,8 +2821,10 @@ chance.addActionListener(new ActionListener() {
             dice4Label.setVisible(false);
             dice5Label.setVisible(false);
         } else {
+            numRollsLabel.setText("Rolls: " + Main.countRolls);
             usedCatC.setText("Chance: Used");
             resetDice();
+            numRollsLabel.setVisible(true);
             usedCat1.setVisible(true);
             usedCat2.setVisible(true);
             usedCat3.setVisible(true);
@@ -2860,6 +2910,7 @@ again.addActionListener(new ActionListener() {
 scoreCard.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
+        numRollsLabel.setVisible(false);
        finalLabel.setVisible(false);
         usedCat1.setVisible(false);
         usedCat2.setVisible(false);
@@ -2937,6 +2988,7 @@ back.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(scoreRollPress){
+            numRollsLabel.setVisible(true);
             usedCat1.setVisible(true);
             usedCat2.setVisible(true);
             usedCat3.setVisible(true);
@@ -2970,6 +3022,7 @@ back.addActionListener(new ActionListener() {
                 roll.setVisible(true);
             }
         }else if(scoreCardPress){
+            numRollsLabel.setVisible(true);
             usedCat1.setVisible(true);
             usedCat2.setVisible(true);
             usedCat3.setVisible(true);
